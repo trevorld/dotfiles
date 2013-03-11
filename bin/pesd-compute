@@ -1,0 +1,3 @@
+#!/usr/bin/env bash 
+
+rdesktop -u Trevor pesd-compute.stanford.edu

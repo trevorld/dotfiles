@@ -1,0 +1,10 @@
+" 0.5.3 (created: 2007/12/21 19:26:07)
+set toolbars=none,addons
+map <Leader>n :set toolbars=invnavigation<Enter>
+map <Leader>b :set toolbars=invbookmarks
+map <Leader>m :set toolbars=invmenu
+map <Leader>t :set toolbars=invtabs
+map <Leader>a :set toolbars=invaddons
+set visualbell
+set defsearch=duckduckgo
+" vim: set ft=vimperator:

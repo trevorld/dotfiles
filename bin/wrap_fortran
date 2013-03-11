@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Author: Trevor L Davis <trevor.l.davis@stanford.edu>
+# License: revised BSD
+
+usage="Usage: `basename $0` [--help] file.exe"
+if ! [ `echo $* | grep -c help` = 0 ] || [ $# -eq 0 ]; then
+    echo $USAGE >&2
+    exit 1
+fi
+file=$1
+directory=`dirname $file`
+base=`basename $file .exe`
+logfile=$directory/${base}.log
+srcfile=$directory/${base}.f95
+/usr/bin/time -v --output=$HOME/tmp/time.txt ./$file &> $logfile
+mutt -s "FORTRAN job $file complete" -a $srcfile $logfile -- ${USER}@stanford.edu < $HOME/tmp/time.txt

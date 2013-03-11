@@ -1,0 +1,13 @@
+#!/usr/bin/env Rscript
+suppressPackageStartupMessages(library("argparse"))
+
+parser <- ArgumentParser(description = "knit a document with knitr")
+parser$add_argument('file', type='character', nargs=1, help='file to knit')
+args <- parser$parse_args()
+file <- args$file
+
+if( file.access(file) == -1) {
+    stop(sprintf("Specified file ( %s ) does not exist", file))
+} else {
+    file_text <- knitr::knit(file)
+}

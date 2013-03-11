@@ -1,0 +1,5 @@
+#!/bin/bash
+
+base=`basename $1 .tex`
+export LC_ALL="en_US.utf8"
+texi2dvi -c -p "${base}.tex"

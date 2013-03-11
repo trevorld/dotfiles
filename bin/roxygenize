@@ -1,0 +1,15 @@
+#!/usr/bin/env Rscript
+suppressPackageStartupMessages(library("argparse"))
+
+parser <- ArgumentParser(description = "roxygenize a package")
+parser$add_argument('file', type='character', nargs=1, help='package directory')
+args <- parser$parse_args()
+file <- args$file
+
+if( file.access(file) == -1) {
+    stop(sprintf("Specified file ( %s ) does not exist", file))
+} else {
+    library("roxygen2")
+    unlink(file.path(file, "man", "*"))
+    roxygenize(file)
+}

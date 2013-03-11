@@ -1,0 +1,2 @@
+#! /usr/bin/env bash
+nohup $@ >> $HOME/tmp/nohup.out 2>> $HOME/tmp/nohup.out < /dev/null &

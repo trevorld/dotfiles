@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Author: Trevor L Davis <trevor.l.davis@stanford.edu>
+# License: revised BSD
+# Usage: nag_compile.sh example.f95
+# Designed for use in the keynes and barley servers at Stanford
+
+usage="Usage: `basename $0` [--help] file"
+if ! [ `echo $* | grep -c help` = 0 ] || [ $# -eq 0 ]; then
+    echo $USAGE >&2
+    exit 1
+fi
+file=$1
+directory=`dirname $file`
+case $file in
+    *.f )
+        base=`basename $file .f`
+        ;;
+    *.f90 )
+        base=`basename $file .f90`
+        ;;
+    *.f95 )
+        base=`basename $file .f95`
+        ;;
+esac
+
+extra_modules=$directory/fortran_modules.o
+if [[ "$HOSTNAME" =~ "keynes" ]]
+then
+    source /etc/profile.d/nag.sh
+    INSTALL_DIR=/opt/econ/software/nag/nag-fl-nc-23/fll6a23d9l
+    # nagfor -I${INSTALL_DIR}/nag_interface_blocks $file ${INSTALL_DIR}/lib/libnag_nag.a -o  $directory/${base}.exe
+    nagfor -I${INSTALL_DIR}/nag_interface_blocks -I${directory}/ $file $extra_modules ${INSTALL_DIR}/lib/libnag_nag.a -o $directory/${base}.exe
+else
+    INSTALL_DIR=/afs/ir/software/nag-fl-gf-23/fll6a23dfl
+    gfortran -m64 -I${INSTALL_DIR}/nag_interface_blocks -I${directory}/ $file $extra_modules ${INSTALL_DIR}/lib/libnag_nag.a -o $directory/${base}.exe
+fi
+if [ -f *.mod ] 
+then 
+    mv *.mod $directory/ 
+fi
+    

@@ -1,0 +1,41 @@
+#!/bin/bash
+
+USAGE="Usage: `basename $0` [--help] packed_file"
+
+if ! [ `echo $* | grep -c help` = 0 ] || [ $# -eq 0 ]; then
+    echo $USAGE >&2
+    exit 1
+fi
+for file in $*
+do
+    case $file in
+        *.tar )
+            tar -xf $file
+            ;;
+        *.tar.gz )
+            tar -zxf $file
+            ;;
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2 )
+            tar -jxf $file
+            ;;
+        *.tgz )
+            tar -zxvf $file
+            ;;
+        *.gz )
+            gzip -d $file
+            ;;
+        *.rar )
+            unrar e $file
+            ;;
+        *.zip )
+            unzip $file
+            ;;
+        *.7z )
+            7z x $file
+            ;;
+        * )
+            echo "File $file is of unknow type"
+            ;;
+    esac
+done
+

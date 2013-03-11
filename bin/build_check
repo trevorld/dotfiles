@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# base=`basename $1 .tex`
+# export LC_ALL="en_US.utf8"
+# texi2dvi -c -p "${base}.tex"
+
+R CMD build $1
+R CMD check --as-cran $1_*.tar.gz

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+base=`basename $1 .tex`
+latex $base
+# bibtex $base
+latex2rtf $base
