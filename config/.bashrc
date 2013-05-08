@@ -13,16 +13,26 @@ export SHELL=/bin/bash
 
 # Improve XDG standard compliance
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:=$HOME/.cache}
+[ -d $XDG_CACHE_HOME ] || mkdir $XDG_CACHE_HOME
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:=$HOME/.config}
-[ -d "$XDG_CACHE_HOME/bash" ] || mkdir -p $XDG_CACHE_HOME/bash
+[ -d $XDG_CONFIG_HOME ] || mkdir $XDG_CONFIG_HOME
+
 export HISTFILE=$XDG_CACHE_HOME/bash/bash_history
+[ -d "$XDG_CACHE_HOME/bash" ] || mkdir -p $XDG_CACHE_HOME/bash
+
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
+
 export MATLABPATH=$XDG_CONFIG_HOME/matlab
+
 export R_PROFILE_USER=$XDG_CONFIG_HOME/R/Rprofile
 export R_LIBS_USER=$XDG_CONFIG_HOME/R/%p-platform/%v
 export R_HISTFILE=$XDG_CACHE_HOME/R/Rhistory
+[ -d $XDG_CACHE_HOME/R ] || mkdir $XDG_CACHE_HOME/R
+
 export TODOTXT_CFG_FILE=$XDG_CONFIG_HOME/todo/todo.cfg
+[ -d $XDG_CONFIG_HOME/todo ] || mkdir $XDG_CONFIG_HOME/todo
 source $XDG_CONFIG_HOME/todo/todo_completion
+
 #export VIMINIT=$XDG_CONFIG_HOME/.vimrc
 #export VIMPERATOR_INIT=$XDG_CONFIG_HOME/.vimperatorrc
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'

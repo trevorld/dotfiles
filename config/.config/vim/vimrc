@@ -58,7 +58,7 @@ endif
 " greater XDG compliance
 " should probably set defaults
 set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
-set runtimepath=$XDG_CONFIG_HOME/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$XDG_CONFIG_HOME/vim/after
+" set runtimepath=$XDG_CONFIG_HOME/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$XDG_CONFIG_HOME/vim/after
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Useful maps
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,12 +88,16 @@ map <Leader>j <C-W>j:bd<Enter>
 " useful maps for Rnoweb files to switch between Latex-suite and vim-r-plugin
 map <Leader>r :set filetype=r<CR>:set syntax=rnoweb<CR>
 map <Leader>t :set filetype=tex<CR>:set syntax=rnoweb<CR>
-let g:vimrplugin_underscore = 1
+" let g:vimrplugin_underscore = 1
+let vimrplugin_assign = 0
+" let vimrplugin_assign = 0
+
 let g:vimrplugin_latexcmd = "texi2dvi -c -p" 
 let maplocalleader = ","
 " no smart quotes in latex
 let g:Tex_SmartQuoteOpen = '"'
 let g:Tex_SmartQuoteClose = '"'
+let g:Tex_DefaultTargetFormat = "pdf"
 
 " useful to spread spaces
 map <Leader>s i<space><Esc>la<space><Esc>h

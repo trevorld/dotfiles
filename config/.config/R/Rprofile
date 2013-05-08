@@ -2,7 +2,6 @@
 .hostname <- Sys.getenv("HOSTNAME")[[1]]
 
 # .libPaths(new=basedir::save_data_path("R/%p-platform/%v", expand=TRUE))
-require("utils")
 # options(devtools.path=file.path(basedir::config_home, "R-dev"))
 
 options(browser="firefox", help.try.all.packages=TRUE, 
@@ -30,6 +29,19 @@ if(interactive()) {
     }
 }
 
+history_file <- file.path(appdirs::user_cache_dir("R"), "Rhistory")
+.First <- function() {
+   if(!any(commandArgs()=='--no-readline') && interactive()) {
+     require("utils")
+     loadhistory(history_file)
+     }
+}
+.Last <- function() {
+   if(!any(commandArgs()=='--no-readline') && interactive()) {
+     require("utils")
+     try(savehistory(history_file))
+   }
+}
 
 # Inspired by Branimir Dolicki posting on StackOverflow
 # http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile
