@@ -5,9 +5,9 @@
 UTILITIES_CONFIG_HOME=$HOME/utilities/config/
 
 files=( .bashrc .hgrc )
-#        $(echo $(ls -A .config) | sed -e "s,^\| , .config/,g") )
-for file in $files
+for file in ${files[@]}
 do
+    echo $file
     ln --symbolic --interactive $UTILITIES_CONFIG_HOME/$file $HOME/$file
 done
 
@@ -24,3 +24,6 @@ UTILITIES_XDG_CONFIG_HOME=$UTILITIES_CONFIG_HOME/.config
 cd "$UTILITIES_XDG_CONFIG_HOME"
 find -type d -exec mkdir --parents -- "$XDG_CONFIG_HOME"/{} \;
 find -type f -exec ln --symbolic --interactive -- "$UTILITIES_XDG_CONFIG_HOME"/{} "$XDG_CONFIG_HOME"/{} \;
+
+source $HOME/.bashrc
+cd
