@@ -37,7 +37,7 @@ source $XDG_CONFIG_HOME/todo/todo_completion
 #export VIMPERATOR_INIT=$XDG_CONFIG_HOME/.vimperatorrc
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"
-export PENTADACTYL_INIT=":source $XDG_CONFIG_HOME/pentadactyl/pentadactylrc"
+#export PENTADACTYL_INIT=":source $XDG_CONFIG_HOME/pentadactyl/pentadactylrc"
 export TEXINPUTS=".:$XDG_CONFIG_HOME/latex:"
 
 # export XDG_DATA_HOME=${XDG_DATA_HOME:=$HOME/.local/share}

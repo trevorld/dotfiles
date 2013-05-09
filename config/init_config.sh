@@ -4,6 +4,16 @@
 # config=$HOME/projects/utilities/config
 UTILITIES_CONFIG_HOME=$HOME/utilities/config/
 
+if hash kde4-config
+then
+    KDEHOME=`kde4-config --localprefix`
+    mkdir --parents $KDEHOME/env
+    file=source_bashrc.sh
+    ln --symbolic --interactive $UTILITIES_CONFIG_HOME/.kde/env/$file $KDEHOME/env/$file
+else
+    true
+fi
+
 files=( .bashrc .hgrc )
 for file in ${files[@]}
 do
