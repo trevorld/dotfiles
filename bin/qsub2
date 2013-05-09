@@ -83,19 +83,33 @@ echo "echo 'Running $program program $file on host $HOSTNAME'" >> $shellscript
 # echo 'echo "PATH: $PATH"' >> $shellscript # check if path is set up correctly
 case $program in
     R )
+
+        if [[ "$HOSTNAME" =~ "keynes" ]]
+        then
+            echo "module load R/3.0" >> $shellscript
+        else
+            true
+        fi
         echo "R CMD BATCH $file $logfile" >> $shellscript
         ;;
     STATA )
         if [[ "$HOSTNAME" =~ "keynes" ]]
         then
-            echo "stata-se -q -b do $file" >> $shellscript
+            echo "module load StataSE-12.1" >> $shellscript
         else
-            echo "stata -q -b do $file" >> $shellscript
+            true
         fi
+        echo "stata -q -b do $file" >> $shellscript
         echo "mv $logfile $directory" >> $shellscript
         logfile=$directory/$logfile
         ;;
     MATLAB )
+        if [[ "$HOSTNAME" =~ "keynes" ]]
+        then
+            echo "module load MATLAB-R2012b" >> $shellscript
+        else
+            true
+        fi
         echo "matlab < $file > $logfile" >> $shellscript
         ;;
     SAS )
