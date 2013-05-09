@@ -2,13 +2,13 @@
 
 # config_original="$HOME/tmp/config_backup"
 # config=$HOME/projects/utilities/config
-UTILITIES_CONFIG_HOME=$HOME/projects/utilities/config/
+UTILITIES_CONFIG_HOME=$HOME/utilities/config/
 
 files=( .bashrc .hgrc )
 #        $(echo $(ls -A .config) | sed -e "s,^\| , .config/,g") )
 for file in $files
 do
-    ln --symbolic $UTILITIES_CONFIG_HOME/$file $HOME/$file
+    ln --symbolic --interactive $UTILITIES_CONFIG_HOME/$file $HOME/$file
 done
 
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
@@ -23,24 +23,4 @@ fi
 UTILITIES_XDG_CONFIG_HOME=$UTILITIES_CONFIG_HOME/.config
 cd "$UTILITIES_XDG_CONFIG_HOME"
 find -type d -exec mkdir --parents -- "$XDG_CONFIG_HOME"/{} \;
-find -type f -exec ln --symbolic -- "$UTILITIES_XDG_CONFIG_HOME"/{} "$XDG_CONFIG_HOME"/{} \;
-
-# for file in ${files[*]}
-# do
-#     # siduction bash -e doesn't find symbolic links that point to nothing
-#     if [ -e $HOME/$file -o -L $HOME/$file ] 
-#     then
-#         if [ ! -L $HOME/$file ]
-#         then
-#             if ! [ -d $config_original ] 
-#             then
-#                 mkdir -p $config_original
-#                 echo "Created directory $config_original"
-#             fi
-#             cp -r $HOME/$file $config_original/
-#             echo "Backed up $HOME/$file to $config_original"
-#         fi
-#         rm -r $HOME/$file 
-#     fi
-#     ln -s $config/$file $HOME/$file
-# done
+find -type f -exec ln --symbolic --interactive -- "$UTILITIES_XDG_CONFIG_HOME"/{} "$XDG_CONFIG_HOME"/{} \;

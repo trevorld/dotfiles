@@ -1,12 +1,12 @@
 if [[ "$HOSTNAME" =~ "corn" ]]
 then
-    export PATH=/mnt/glusterfs/apps/stata12:$PATH:$HOME/bin:$HOME/projects/utilities/bin
+    export PATH=/mnt/glusterfs/apps/stata12:$PATH:$HOME/bin:$HOME/utilities/bin
     source /usr/sweet/etc/nag/nagasli.sh
     NAG_KUSARI_FILE=$HOME/Documents/license.lic
     export NAG_KUSARI_FILE
     export FRANKCLASS=/afs/.ir/class/gsbgen336
 else
-    export PATH=$PATH:$HOME/bin:$HOME/projects/utilities/bin
+    export PATH=$PATH:$HOME/bin:$HOME/utilities/bin
 fi
 
 export SHELL=/bin/bash
