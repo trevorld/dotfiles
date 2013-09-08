@@ -5,6 +5,7 @@ then
     NAG_KUSARI_FILE=$HOME/Documents/license.lic
     export NAG_KUSARI_FILE
     export FRANKCLASS=/afs/.ir/class/gsbgen336
+    eval `tclsh /mnt/glusterfs/software/free/modules/tcl/modulecmd.tcl sh autoinit`
 else
     export PATH=$PATH:$HOME/bin:$HOME/utilities/bin
 fi
