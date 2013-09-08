@@ -9,6 +9,11 @@ else
     export PATH=$PATH:$HOME/bin:$HOME/utilities/bin
 fi
 
+if [[ "$HOSTNAME" =~ "siductionbox" ]]
+then
+    export GTK_IM_MODULE=xim
+fi
+
 export SHELL=/bin/bash
 
 # Improve XDG standard compliance
