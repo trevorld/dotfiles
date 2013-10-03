@@ -1,11 +1,10 @@
 if [[ "$HOSTNAME" =~ "corn" ]]
 then
     export PATH=/mnt/glusterfs/apps/stata12:$PATH:$HOME/bin:$HOME/utilities/bin
-    source /usr/sweet/etc/nag/nagasli.sh
-    NAG_KUSARI_FILE=$HOME/Documents/license.lic
-    export NAG_KUSARI_FILE
+    #source /usr/sweet/etc/nag/nagasli.sh
+    #export NAG_KUSARI_FILE=$HOME/Documents/license.lic
     export FRANKCLASS=/afs/.ir/class/gsbgen336
-    eval `tclsh /mnt/glusterfs/software/free/modules/tcl/modulecmd.tcl sh autoinit`
+    #eval `tclsh /mnt/glusterfs/software/free/modules/tcl/modulecmd.tcl sh autoinit`
 else
     export PATH=$PATH:$HOME/bin:$HOME/utilities/bin
 fi
