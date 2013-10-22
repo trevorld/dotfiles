@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 if [[ "$HOSTNAME" =~ "siductionbox" ]]
 then
-    true
+    echo "Please enter root "
+    su -c 'mount /dev/sdb5 media'
 else
     backup_file=/media/$USER/data/data.tc 
     if [ -e $backup_file ]

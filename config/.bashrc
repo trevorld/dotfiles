@@ -7,12 +7,15 @@ then
     export FRANKCLASS=/afs/.ir/class/gsbgen336
     eval `tclsh /mnt/glusterfs/software/free/modules/tcl/modulecmd.tcl sh autoinit`
 else
-    export PATH=$PATH:$HOME/bin:$HOME/utilities/bin
+    export PATH=$PATH:$HOME/bin:$HOME/utilities/bin:$HOME/data/SpiderOak/apps/stata12
 fi
 
 if [[ "$HOSTNAME" =~ "siductionbox" ]]
 then
-    export GTK_IM_MODULE=xim
+    export GTK_IM_MODULE=ibus
+    export XMODIFIERS=@im=ibus
+    export QT_IM_MODULE=ibus
+    #export GTK_IM_MODULE=xim
 fi
 
 export SHELL=/bin/bash
