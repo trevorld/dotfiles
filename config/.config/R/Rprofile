@@ -1,5 +1,5 @@
 # username <- Sys.getenv("LOGNAME")[[1]]
-.hostname <- Sys.getenv("HOSTNAME")[[1]]
+.hostname <- Sys.getenv("HOSTNAME", Sys.getenv("HOST"))
 
 # .libPaths(new=basedir::save_data_path("R/%p-platform/%v", expand=TRUE))
 # options(devtools.path=file.path(basedir::config_home, "R-dev"))
