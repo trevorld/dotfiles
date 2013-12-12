@@ -44,6 +44,7 @@ source $XDG_CONFIG_HOME/todo/todo_completion
 #export VIMINIT=$XDG_CONFIG_HOME/.vimrc
 #export VIMPERATOR_INIT=$XDG_CONFIG_HOME/.vimperatorrc
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+[ -d "$XDG_CACHE_HOME/vim" ] || mkdir -p $XDG_CACHE_HOME/vim
 export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"
 #export PENTADACTYL_INIT=":source $XDG_CONFIG_HOME/pentadactyl/pentadactylrc"
 export TEXINPUTS=".:$XDG_CONFIG_HOME/latex:"
