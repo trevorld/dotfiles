@@ -7,6 +7,8 @@ then
     export FRANKCLASS=/afs/.ir/class/gsbgen336
 else
     export PATH=$PATH:$HOME/bin:$HOME/utilities/bin
+    statapath=$HOME/data/SpiderOak/apps/stata12
+    [ -d "$statapath" ] && export PATH=$PATH:$statapath
 fi
 
 export SHELL=/bin/bash
@@ -122,6 +124,7 @@ alias keynes="ssh -X keynes.stanford.edu"
 alias corn="ssh -X corn.stanford.edu"
 alias ssh="ssh -X"
 alias gvim="gvim -p"
+alias anki="anki --base=${HOME}/data/Dropbox/Anki"
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
