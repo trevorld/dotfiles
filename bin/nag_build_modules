@@ -26,8 +26,11 @@ esac
 
 if [[ "$HOSTNAME" =~ "keynes" ]]
 then
-    source /etc/profile.d/nag.sh
-    INSTALL_DIR=/opt/econ/software/nag/nag-fl-nc-23/fll6a23d9l
+    module load NAG-Fortran
+    #source /etc/profile.d/nag.sh
+    INSTALL_DIR=/mnt/econ_nas/software/nag/nag-fl-nc-23/fll6a23d9l
+    # source /etc/profile.d/nag.sh
+    # INSTALL_DIR=/opt/econ/software/nag/nag-fl-nc-23/fll6a23d9l
     # nagfor -I${INSTALL_DIR}/nag_interface_blocks $file ${INSTALL_DIR}/lib/libnag_nag.a -o $directory/${base}.exe
     nagfor -I${INSTALL_DIR}/nag_interface_blocks -c $file
     mv *.mod $directory/

@@ -1,5 +1,5 @@
 # username <- Sys.getenv("LOGNAME")[[1]]
-.hostname <- Sys.getenv("HOSTNAME")[[1]]
+.hostname <- Sys.getenv("HOSTNAME", Sys.getenv("HOST"))
 
 # .libPaths(new=basedir::save_data_path("R/%p-platform/%v", expand=TRUE))
 # options(devtools.path=file.path(basedir::config_home, "R-dev"))
@@ -29,18 +29,14 @@ if(interactive()) {
     }
 }
 
-history_file <- file.path(appdirs::user_cache_dir("R"), "Rhistory")
-.First <- function() {
-   if(!any(commandArgs()=='--no-readline') && interactive()) {
-     require("utils")
-     loadhistory(history_file)
-     }
-}
-.Last <- function() {
-   if(!any(commandArgs()=='--no-readline') && interactive()) {
-     require("utils")
-     try(savehistory(history_file))
-   }
+if(capabilities("cledit")) {
+  cache_dir <- rappdirs::user_cache_dir("R")
+  history_file <- file.path(cache_dir, "Rhistory")
+  .First <- function() utils::loadhistory(history_file)
+  .Last <- function() { 
+    if (!file.exists(cache_dir)) dir.create(cache_dir, recursive = TRUE)
+    try(savehistory(history_file))
+  }
 }
 
 # Inspired by Branimir Dolicki posting on StackOverflow

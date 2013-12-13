@@ -1,14 +1,22 @@
 if [[ "$HOSTNAME" =~ "corn" ]]
 then
     export PATH=/mnt/glusterfs/apps/stata12:$PATH:$HOME/bin:$HOME/utilities/bin
-    source /usr/sweet/etc/nag/nagasli.sh
-    NAG_KUSARI_FILE=$HOME/Documents/license.lic
-    export NAG_KUSARI_FILE
-    export FRANKCLASS=/afs/.ir/class/gsbgen336
+    #source /usr/sweet/etc/nag/nagasli.sh
+    #export NAG_KUSARI_FILE=$HOME/Documents/license.lic
+    export FRANKCLASS=/afs/.ir/class/gsbgen336/cgi-bin
+    #eval `tclsh /mnt/glusterfs/software/free/modules/tcl/modulecmd.tcl sh autoinit`
 else
     export PATH=$PATH:$HOME/bin:$HOME/utilities/bin
     statapath=$HOME/data/SpiderOak/apps/stata12
     [ -d "$statapath" ] && export PATH=$PATH:$statapath
+fi
+
+if [[ "$HOSTNAME" =~ "siductionbox" ]]
+then
+    export GTK_IM_MODULE=ibus
+    export XMODIFIERS=@im=ibus
+    export QT_IM_MODULE=ibus
+    #export GTK_IM_MODULE=xim
 fi
 
 export SHELL=/bin/bash
@@ -38,6 +46,7 @@ source $XDG_CONFIG_HOME/todo/todo_completion
 #export VIMINIT=$XDG_CONFIG_HOME/.vimrc
 #export VIMPERATOR_INIT=$XDG_CONFIG_HOME/.vimperatorrc
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+[ -d "$XDG_CACHE_HOME/vim" ] || mkdir -p $XDG_CACHE_HOME/vim
 export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"
 #export PENTADACTYL_INIT=":source $XDG_CONFIG_HOME/pentadactyl/pentadactylrc"
 export TEXINPUTS=".:$XDG_CONFIG_HOME/latex:"
