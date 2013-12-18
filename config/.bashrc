@@ -6,7 +6,9 @@ then
     export FRANKCLASS=/afs/.ir/class/gsbgen336/cgi-bin
     #eval `tclsh /mnt/glusterfs/software/free/modules/tcl/modulecmd.tcl sh autoinit`
 else
-    export PATH=$PATH:$HOME/bin:$HOME/utilities/bin:$HOME/data/SpiderOak/apps/stata12
+    export PATH=$PATH:$HOME/bin:$HOME/utilities/bin
+    statapath=$HOME/data/SpiderOak/apps/stata12
+    [ -d "$statapath" ] && export PATH=$PATH:$statapath
 fi
 
 if [[ "$HOSTNAME" =~ "siductionbox" ]]
@@ -131,6 +133,7 @@ alias keynes="ssh -X keynes.stanford.edu"
 alias corn="ssh -X corn.stanford.edu"
 alias ssh="ssh -X"
 alias gvim="gvim -p"
+alias anki="anki --base=${HOME}/data/Dropbox/Anki"
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
