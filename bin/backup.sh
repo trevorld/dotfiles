@@ -2,6 +2,7 @@
 if [[ "$HOSTNAME" =~ "siductionbox" ]]
 then
     echo "Please enter root "
+    ibus-daemon -dx
     su -c 'mount /dev/sdb5 media'
 else
     sudo mount /dev/sdb5 media
