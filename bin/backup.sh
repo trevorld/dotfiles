@@ -4,6 +4,7 @@ then
     echo "Please enter root "
     su -c 'mount /dev/sdb5 media'
 else
+    sudo mount /dev/sdb5 media
     backup_file=/media/$USER/data/data.tc 
     if [ -e $backup_file ]
     then
