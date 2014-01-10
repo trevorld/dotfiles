@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+dir_dailydose=$HOME/media/SpiderOak/Podcasts/DailyDose
+vlc $dir_dailydose &
+xdg-open $dir_dailydose
+xdg-open "$HOME/Music/Daily Dose"

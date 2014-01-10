@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+podcast=$1
+dir_podcast=$HOME/media/SpiderOak/Podcasts/$podcast
+vlc $dir_podcast &
+xdg-open $dir_podcast
