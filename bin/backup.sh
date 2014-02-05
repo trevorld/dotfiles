@@ -3,13 +3,15 @@ if [[ "$HOSTNAME" =~ "siductionbox" ]]
 then
     echo "Please enter root "
     ibus-daemon -dx
-    su -c 'mount /dev/sdb5 media'
+    bk_dir=/media/$USER/data
+    su -c "/dev/sda6 $bk_dir; mount /dev/sdb5 media; truecrypt -t -k '' --protect-hidden=no $bk_dir/data.tc $HOME/data"
 else
     sudo mount /dev/sdb5 media
+    sudo mount /dev/sda6 /media/$USER/data
     backup_file=/media/$USER/data/data.tc 
     if [ -e $backup_file ]
     then
-        truecrypt $backup_file $HOME/data
+        truecrypt -t -k "" --protect-hidden=no $backup_file $HOME/data
     else
         echo "$backup_file does not exist"
     fi
