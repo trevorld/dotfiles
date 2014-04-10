@@ -18,9 +18,10 @@ if (grepl("^keynes", .hostname) || grepl("^corn", .hostname)) {
 
 if(interactive()) {
     if(!require("tldutils")) {
-        # install from R-forge
-        install.packages("tldutils", repos="http://R-Forge.R-project.org")
-        library("tldutils")
+        if(!require("devtools")) {
+            utils::install.packages("devtools")
+        }
+        devtools::install_github("tldutils", "trevorld")
     }
     if (grepl("^keynes", .hostname) || grepl("^corn", .hostname)) {
         invisible(NULL)

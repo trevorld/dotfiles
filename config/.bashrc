@@ -134,6 +134,7 @@ alias corn="ssh -X corn.stanford.edu"
 alias ssh="ssh -X"
 alias gvim="gvim -p"
 alias anki="anki --base=${HOME}/data/Dropbox/Anki"
+alias xstata="xstata-se"
 alias rst2pdf="rst2pdf -s letter"
 
 # enable color support of ls and also add handy aliases
