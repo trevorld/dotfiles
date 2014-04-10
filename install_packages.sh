@@ -28,6 +28,7 @@ apt-get install calligra libreoffice # spreadsheet
 apt-get install kmymoney
 apt-get install fbreader
 apt-get install virtualbox-qt virtualbox-dkms
+apt-get install eyed3 easytag
 
 # Backup software
 # truecrypt
