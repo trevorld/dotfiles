@@ -20,6 +20,7 @@ then
 fi
 
 export SHELL=/bin/bash
+export podcasts=$HOME/media/SpiderOak/Podcasts
 
 # Improve XDG standard compliance
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:=$HOME/.cache}
