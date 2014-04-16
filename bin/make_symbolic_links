@@ -1,6 +1,11 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 backup_dir=$HOME/data
-for dir in Documents Music Pictures Videos projects src
+media_dir=$HOME/media
+for dir in Documents Music Pictures projects src
 do
     ln -s $backup_dir/SpiderOak/$dir $HOME/$dir
+done
+for dir in Podcasts
+do
+    ln -s $media_dir/SpiderOak/$dir $HOME/$dir
 done
