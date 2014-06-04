@@ -19,6 +19,7 @@ then
     export GTK_IM_MODULE=xim
 fi
 
+export HISTSIZE=10000
 export SHELL=/bin/bash
 export podcasts=$HOME/media/SpiderOak/Podcasts
 
