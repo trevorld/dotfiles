@@ -29,6 +29,7 @@ apt-get install kmymoney
 apt-get install fbreader
 apt-get install virtualbox-qt virtualbox-dkms
 apt-get install eyed3 easytag
+apt-get install grsync gparted
 
 # Backup software
 # truecrypt
