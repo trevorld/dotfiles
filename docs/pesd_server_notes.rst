@@ -1,7 +1,5 @@
 .. contents::
 
-.. _VPN: http://itservices.stanford.edu/service/vpn/
-
 FSI-PESD-Server notes
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -12,11 +10,45 @@ The server has Stata (release 13), SAS 9.4, NAG Fortran libraries (Mark 24), and
 Logging in
 ----------
 
-One can log onto the server using SSH using your provided username and password.  On Mac / Linux systems or if you have installed a Unix environment on Windows like Cygwin ( open up a terminal and use something like::
+One can log onto the server using SSH using your provided username and password.  Mac and Linux computers have SSH built in.  If you are on one of those systems or you have installed a Unix environment with SSH on Windows (such as the one provided by Cygwin_) then open up a terminal and login in::
 
   bash$ ssh -X username@fsi-pesd-server.stanford.edu
 
 And then enter your password at the prompt.  If you are not connected to PESD's ethernet network then you'll first need to VPN_ onto Stanford's network.
+
+Stanford Itservices also provides instructions for logging on via SSH_ in different ways such as SecureCRT.
+
+.. _VPN: http://itservices.stanford.edu/service/vpn/
+.. _SSH: https://itservices.stanford.edu/service/sharedcomputing/loggingin
+.. _Cygwin: http://cygwin.com/
+
+General Linux Notes 
+--------------------
+
+There are multiple online resources and books to help you understand Linux and various open source tools.  O'Reilly in particular is a technology publisher known for excellent books on open source tools and through the Stanford library you can read their books for free online.
+
+Some particular books you may find useful include:
+
+1) `Linux in a nutshell`_
+#) `Bash pocket reference`_
+#) `Learning the vi and vim editors`_
+#) `R in a nutshell`_
+#) `Learning Python`_
+
+.. _Linux in a nutshell: http://searchworks.stanford.edu/view/5644376
+.. _Bash pocket reference: http://searchworks.stanford.edu/view/8837104
+.. _R in a nutshell: http://searchworks.stanford.edu/view/10087393
+.. _Learning the vi and vim editors:  http://searchworks.stanford.edu/view/8261314
+.. _Learning Python: http://searchworks.stanford.edu/view/8387828
+
+Running long running jobs
+-------------------------
+
+Unlike other Linux servers at Stanford the FSI-PESD-Server doesn't have any queuing system.  If you will be running long jobs you should familiarize yourself with the UNIX programs ``nohup``, ``screen``, and/or  ``tmux`` each of which allows you to have jobs continue running after you log of the server.
+
+For example::
+
+	nohup ./e04ucfe.exe < e04ucfe.d > e04ucfe.r &
 
 NAG Fortran on FSI-PESD-Server
 ------------------------------
@@ -39,13 +71,3 @@ The example command tells you that it runs the following commands (as well as ou
 	./e04ucfe.exe < e04ucfe.d > e04ucfe.r
 
 The second line in particular shows how to compile a FORTRAN program while linking with the NAG library, note the use of ``gfortran-4.7`` instead of ``gfortran``.  This is because ``gfortran`` on the server is version 4.8 but at the moment NAG does not have any version 4.8 compatible versions of their library so we must use an earlier version of gfortran with NAG.
-
-The FSI-PESD-Server doesn't have any queing system.  If you will be running long FORTRAN jobs you should familarize yourself with the UNIX programs ``nohup``, ``screen``, and/or  ``tmux`` each of which allows you to have jobs continue running after you log of the server.
-
-For example::
-
-	nohup ./e04ucfe.exe < e04ucfe.d > e04ucfe.r &
-	
-
-
-
