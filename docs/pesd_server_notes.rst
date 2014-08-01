@@ -23,6 +23,22 @@ Stanford Itservices also provides instructions for logging on via SSH_ in differ
 .. _SSH: https://itservices.stanford.edu/service/sharedcomputing/loggingin
 .. _Cygwin: http://cygwin.com/
 
+Data storage
+------------
+
+Your home directories are currently on the smaller 240GB SSD hard drive.  Please put all large datasets on the 4TB hard drive which has been mounted to `/data`.  Note you can create a symbolic link in your home directory that points to other directories::
+
+  bash$ ln -s /data/your_project_subdirectory link_name
+
+Data transfer
+-------------
+
+`Secure File Transefrs`_ to the FSI-PESD-Server can be accomplished in a number of ways including using SCP or SFTP.  On \*nix environments this can be as simple as::
+
+   bash$ scp -r local_project_directory  username@fsi-pesd-server.stanford.edu:/data/server_project_directory
+
+.. _Secure File Transfers: http://web.stanford.edu/group/security/securecomputing/sftp.html
+
 General Linux Notes 
 --------------------
 
