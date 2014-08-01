@@ -33,7 +33,7 @@ Your home directories are currently on the smaller 240GB SSD hard drive.  Please
 Data transfer
 -------------
 
-`Secure File Transefrs`_ to the FSI-PESD-Server can be accomplished in a number of ways including using SCP or SFTP.  On \*nix environments this can be as simple as::
+`Secure File Transfers`_ to the FSI-PESD-Server can be accomplished in a number of ways including using SCP or SFTP.  On \*nix environments this can be as simple as::
 
    bash$ scp -r local_project_directory  username@fsi-pesd-server.stanford.edu:/data/server_project_directory
 
@@ -51,12 +51,14 @@ Some particular books you may find useful include:
 #) `Learning the vi and vim editors`_
 #) `R in a nutshell`_
 #) `Learning Python`_
+#) `Version control with Git`_
 
 .. _Linux in a nutshell: http://searchworks.stanford.edu/view/5644376
 .. _Bash pocket reference: http://searchworks.stanford.edu/view/8837104
 .. _R in a nutshell: http://searchworks.stanford.edu/view/10087393
 .. _Learning the vi and vim editors:  http://searchworks.stanford.edu/view/8261314
 .. _Learning Python: http://searchworks.stanford.edu/view/8387828
+.. _Version control with Git: http://searchworks.stanford.edu/view/10087829
 
 Running long running jobs
 -------------------------
