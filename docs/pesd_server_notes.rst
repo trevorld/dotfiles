@@ -17,11 +17,12 @@ One can log onto the server using SSH using your provided username and password.
 
 And then enter your password at the prompt.  If you are not connected to PESD's ethernet network then you'll first need to VPN_ onto Stanford's network.
 
-Stanford Itservices also provides instructions for logging on via SSH_ in different ways such as SecureCRT.
+Stanford Itservices also provides instructions for logging on via SSH_ on Windows in various ways such as SecureCRT (if you don't care about graphics) or Xming_ (if you want graphics).
 
 .. _VPN: http://itservices.stanford.edu/service/vpn/
 .. _SSH: https://itservices.stanford.edu/service/sharedcomputing/loggingin
 .. _Cygwin: http://cygwin.com/
+.. _Xming: http://www.straightrunning.com/XmingNotes/
 
 Data storage
 ------------
