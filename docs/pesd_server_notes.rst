@@ -27,9 +27,9 @@ Stanford Itservices also provides instructions for logging on via SSH_ on Window
 Setting up Cygwin on Windows so you can use GUIs on the server
 --------------------------------------------------------------
 
-Grab the Cygwin_ installer and follow the directions.  When choosing which additional packages to install choose `xinit`, `openssh`, and `mintty` (which is way better than xterm).
+Grab the Cygwin_ installer and follow the directions.  When choosing which additional packages to install choose ``xinit``, ``openssh``, and ``mintty`` (which is better than xterm since you can scroll and also copy/paste).
 
-After `xinit` has been installed you should be able to start X-windows and an xterm by running a program called "Cygwin-X" in the Windows Programs menu.  In the xterm launch `mintty.exe` (this is step is optional but recommended).  Then in the mintty shell login using `ssh -X` with your username as above.  After you have logged in you'll hopefully be able to launch X applications like `xterm`.
+After ``xinit`` has been installed you should be able to start X-windows and an xterm by running a program called "Cygwin-X" in the Windows Programs menu.  In the xterm launch ``mintty.exe`` (this is step is optional but recommended).  Then in the mintty shell login using ``ssh -X`` with your username as above.  After you have logged in you'll hopefully be able to launch X applications like ``xterm``.
 
 Data storage
 ------------
