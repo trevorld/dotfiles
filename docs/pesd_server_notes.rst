@@ -85,6 +85,7 @@ We have a 2-user network license for Stata 13.1.  This means up to two different
 NB. the ``stata``, ``xstata``, ``stata-sm``, ``xstata-sm`` commands will launch data limited versions of stata.  Instead use the ``stata-se``, ``xstata-se``, ``stata-mp``, or ``xstata-mp`` commands (since we didn't buy MP version of stata the latter two should be equivalent to the SE version) which do not have data size restriction imposed on them.  If you are using a ``.bashrc`` configuration file for your bash shell you may want it to include an alias like::
 
     alias xstata="env TMPDIR=/data/tmp xstata-se"
+    alias stata="env TMPDIR=/data/tmp stata-se"
 
 NB. Stata writes alot of temporary files to the location of ``$TMPDIR`` which by default is ``/tmp`` on the smaller solid state hard drive.  If you are running a lot of big stata jobs you will need to set this environmental variable to somewhere on the larger ``/data`` hard drive otherwise the smaller solid state drive can fill up.  For example for a single batch stata job in the bash shell you could enter::
 
