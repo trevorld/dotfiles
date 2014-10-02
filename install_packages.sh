@@ -26,10 +26,11 @@ apt-get install wajig # search packages more easily
 
 apt-get install calligra libreoffice # spreadsheet
 apt-get install kmymoney
-apt-get install fbreader
+apt-get install fbreader comix
 apt-get install virtualbox-qt virtualbox-dkms
 apt-get install eyed3 easytag flac
 apt-get install grsync gparted
+apt-get install recoll
 
 # Backup software
 # truecrypt
@@ -51,16 +52,11 @@ apt-get install latex-xcolor
 apt-get install rst2pdf qpdf python3-docutils
 
 # Vim :-)
-apt-get install vim-gtk vim-addon-manager vim-latexsuite vim-scripts
-vim-addons install -w latex-suite
-vim-addons install -w utl
-# vim-r-plugin
-apt-get install libx11-dev tmux ncurses-term latexmk
+# place vim plugins in src/vim/bundle
+apt-get install vim-gtk 
+
 echo "manually install vimcom or vimcom.plus package in R"
-echo "manually install vim-r-plugin"
-# dpkg -i src/Vim/vim-r-plugin_*.deb
-# vim-addons install -w r-plugin
-echo "manually move VOoM files to /usr/share/vim/addons"
+apt-get install libx11-dev tmux ncurses-term latexmk
 
 # Latex symbol selector
 apt-get install libgtk2.0-dev libxml2-dev

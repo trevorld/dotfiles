@@ -55,6 +55,10 @@ if &t_Co > 2 && !has("gui_running")
   set background=dark
 endif
 
+" pathogen easy install vim modules
+source ~/src/vim/bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect('~/src/vim/bundle/{}')
+
 " greater XDG compliance
 " should probably set defaults
 set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
@@ -98,6 +102,7 @@ let maplocalleader = ","
 let g:Tex_SmartQuoteOpen = '"'
 let g:Tex_SmartQuoteClose = '"'
 let g:Tex_DefaultTargetFormat = "pdf"
+let g:Tex_ViewRule_pdf = "okular"
 
 " useful to spread spaces
 map <Leader>s i<space><Esc>la<space><Esc>h
