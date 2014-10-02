@@ -77,6 +77,10 @@ For example::
 
 	nohup ./e04ucfe.exe < e04ucfe.d > e04ucfe.r &
 
+Note if you will be running a long job using ``nohup``, ``screen``, or ``tmux`` you should probably need to use the non-graphical command-line versions of ``matlab``, ``sas``, ``stata``, etc.  For example use ``state-se`` instead of ``xstata-se`` or you can launch ``matlab`` with the ``-nodesktop`` and ``-nosplash`` options (see `Matlab no gui`_ for more details).
+
+.. _Matlab no gui: http://aspratyush.wordpress.com/tag/matlab-no-gui/
+
 STATA
 -----
 
