@@ -31,6 +31,7 @@ apt-get install virtualbox-qt virtualbox-dkms
 apt-get install eyed3 easytag flac
 apt-get install grsync gparted
 apt-get install recoll
+apt-get install gimp inkscape
 
 # Backup software
 # truecrypt
