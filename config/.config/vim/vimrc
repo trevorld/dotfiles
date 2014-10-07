@@ -56,8 +56,10 @@ if &t_Co > 2 && !has("gui_running")
 endif
 
 " pathogen easy install vim modules
-source ~/src/vim/bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect('~/src/vim/bundle/{}')
+try
+    source ~/src/vim/bundle/vim-pathogen/autoload/pathogen.vim
+    execute pathogen#infect('~/src/vim/bundle/{}')
+endtry
 
 " greater XDG compliance
 " should probably set defaults
