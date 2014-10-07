@@ -59,6 +59,8 @@ endif
 try
     source ~/src/vim/bundle/vim-pathogen/autoload/pathogen.vim
     execute pathogen#infect('~/src/vim/bundle/{}')
+catch
+    " do nothing
 endtry
 
 " greater XDG compliance
