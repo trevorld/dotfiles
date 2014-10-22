@@ -119,3 +119,14 @@ The example command tells you that it runs the following commands (as well as ou
 	./e04ucfe.exe < e04ucfe.d > e04ucfe.r
 
 The second line in particular shows how to compile a FORTRAN program while linking with the NAG library, note the use of ``gfortran-4.7`` instead of ``gfortran``.  This is because ``gfortran`` on the server is version 4.8 but at the moment NAG does not have any version 4.8 compatible versions of their library so we must use an earlier version of gfortran with NAG.
+
+MATLAB
+------
+
+Sometimes Matlab won't work because the Matlab license server isn't running.  To restart the Matlab license server uset the following command in the shell::
+
+    /usr/local/MATLAB/R2014a/etc/lmstart
+
+If you want to use the non-GUI version of Matlab use (i.e. for use in nohup or tmux/screen)::
+
+   matlab -nodesktop -nosplash
