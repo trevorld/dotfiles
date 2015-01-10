@@ -34,15 +34,16 @@ apt-get install recoll
 apt-get install gimp inkscape
 
 # Backup software
+apt-get install tcplay
 # truecrypt
 # dpkg -i src/spideroak*.deb # SpiderOak
 # Dropbox
 # apt-get install python-gpgme
 # dpkg -i src/dropbox*.deb
 apt-get install ibus-pinyin
-apt-get install fonts-arphic-gbsn00lp fonts-arphic-gkai00mp
-echo "Run ibus-setup and set up dvorak keyboard"
+apt-get install fonts-arphic-gbsn00lp fonts-arphic-gkai00mp ttf-hanazono
 apt-get install anki
+echo "Run ibus-setup and set up dvorak keyboard"
 
 apt-get install r-base-dev # R :-)
 # setup .Rprofile
@@ -55,7 +56,6 @@ apt-get install rst2pdf qpdf python3-docutils
 # Vim :-)
 # place vim plugins in src/vim/bundle
 apt-get install vim-gtk 
-
 echo "manually install vimcom or vimcom.plus package in R"
 apt-get install libx11-dev tmux ncurses-term latexmk
 
