@@ -11,6 +11,11 @@ else
     [ -d "$statapath" ] && export PATH=$PATH:$statapath
 fi
 
+if [[ "$HOSTNAME" =~ "zareason-zu8330" ]]
+then
+    export DEV=/home/trading_game/development/cgi-bin
+fi
+
 if [[ "$HOSTNAME" =~ "siductionbox" ]]
 then
     #export GTK_IM_MODULE=ibus
