@@ -38,6 +38,15 @@ Your home directories are currently on the smaller 240GB SSD hard drive.  Please
 
   bash$ ln -s /data/your_project_subdirectory link_name
 
+PESD has paid for some data storage from Stanford provided as Samba.  To access this data storage you may temporarily mount a samba share into your home directory::
+
+  bash$ mkdir ~/mnt_samba
+  bash$ mount -t cifs //files/pesd$ ~/mnt_samba -o username=SUNET_ID,domain=win
+
+Where SUNET_ID is your Sunet id.  You'll be asked for both your pesd server password (for sudo) and your Sunet password (to access samba share).  When you are done dismount the samba share::
+
+  bash$ umount ~/mnt_samba 
+
 Data transfer
 -------------
 
