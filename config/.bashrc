@@ -14,6 +14,7 @@ fi
 if [[ "$HOSTNAME" =~ "zareason-zu8330" ]]
 then
     export DEV=/home/trading_game/development/cgi-bin
+    export GSB=/home/trading_game/w15gsbgen336/WWW/records/stanford/W15-GSBGEN-336
 fi
 
 if [[ "$HOSTNAME" =~ "siductionbox" ]]
