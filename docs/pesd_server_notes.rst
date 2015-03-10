@@ -56,6 +56,12 @@ Data transfer
 
 .. _Secure File Transfers: http://web.stanford.edu/group/security/securecomputing/sftp.html
 
+Another useful tool for transferring data or keeping data in sync is `rsync`.  For example to make (and/or synchronize an existing) copy of the trading game to my laptop I can use the command::
+
+  bash$ rsync -avz --delete --verbose --progress --recursive --size-only trevor@fsi-pesd-server.stanford.edu:/home/trading_game/ /home/trevorld/media/SpiderOak/trading_game/
+
+One helpful option to `rsynce` is the `--dry-run` flag which tells you what it would have done without actually doing it.
+
 General Linux Notes 
 --------------------
 
