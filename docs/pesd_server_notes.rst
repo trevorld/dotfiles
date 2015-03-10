@@ -19,10 +19,13 @@ And then enter your password at the prompt.  If you are not connected to PESD's 
 
 Stanford Itservices also provides instructions for logging on via SSH_ on Windows in various ways such as SecureCRT (if you don't care about graphics) or Xming_ (if you want graphics).
 
+It is possible to `set up SSH keys`_ such that you do not need to enter a password to login to the server.  These keys can also be used by many programs used to copy files over to the server (i.e. scp and rsync).
+
 .. _VPN: http://itservices.stanford.edu/service/vpn/
 .. _SSH: https://itservices.stanford.edu/service/sharedcomputing/loggingin
 .. _Cygwin: http://cygwin.com/
 .. _Xming: http://www.straightrunning.com/XmingNotes/
+.. _set up SSH keys: https://wiki.archlinux.org/index.php/SSH_Keys#Generating_an_SSH_key_pair
 
 Setting up Cygwin on Windows so you can use GUIs on the server
 --------------------------------------------------------------
