@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rsync -avz --dry-run --delete --verbose --progress --recursive --size-only trevor@fsi-pesd-server.stanford.edu:/home/trading_game/ /home/trevorld/media/SpiderOak/trading_game/
+# rsync -avz --delete --verbose --progress --recursive --size-only trevor@fsi-pesd-server.stanford.edu:/home/trading_game/ /home/trevorld/media/SpiderOak/trading_game/
