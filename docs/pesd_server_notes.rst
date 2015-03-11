@@ -37,7 +37,7 @@ After ``xinit`` has been installed you should be able to start X-windows and an 
 Data storage
 ------------
 
-Your home directories are currently on the smaller 240GB SSD hard drive.  Please put all large datasets on the 4TB hard drive which has been mounted to `/data`.  Note you can create a symbolic link in your home directory that points to other directories::
+Your home directories are currently located on a dedicated 1TB SSD hard drive.  If you have any large datasets you aren't actively reading/writing to then it might be a good idea to place them on the slower 4TB hard drive which has been mounted to `/data`.  Note you can create a symbolic link in your home directory that points to other directories::
 
   bash$ ln -s /data/your_project_subdirectory link_name
 
