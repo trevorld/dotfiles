@@ -136,7 +136,7 @@ where XXXXXX is the code for the desired routine.  For example::
 	/opt/NAG/fll6a24dfl/scripts/nag_example e04ucf    # Single-threaded Mark 24
         /opt/NAG/fsl6a23dfl/scripts/nagsmp_example e01tnfe 2  # Multi-core  Mark 23
 
-The example command tells you that it runs the following commands (as well as outputting the example program output)::
+The example single-threaded command tells you that it runs the following commands (as well as outputting the example program output)::
 
 	cp /opt/NAG/fll6a24dfl/examples/source/e04ucfe.f90 .
 	gfortran-4.7 -I/opt/NAG/fll6a24dfl/nag_interface_blocks e04ucfe.f90 /opt/NAG/fll6a24dfl/lib/libnag_nag.a -o e04ucfe.exe
