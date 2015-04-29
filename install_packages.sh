@@ -63,3 +63,7 @@ apt-get install libx11-dev tmux ncurses-term latexmk
 apt-get install libgtk2.0-dev libxml2-dev
 # manually install latex symbol selector
 echo "Manually install Latex symbol selector"
+
+# Python
+sudo apt-get install python-pip python-dev
+sudo pip install the fuck

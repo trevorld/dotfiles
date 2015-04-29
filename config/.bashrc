@@ -144,7 +144,8 @@ alias gvim="gvim -p"
 alias vim="vim -p"
 alias anki="anki --base=${HOME}/data/Dropbox/Anki"
 alias xstata="env TMPDIR=${HOME}/media/tmp xstata-se"
-alias rst2pdf="rst2pdf -s letter"
+alias rst2pdf="rst2pdf -s letter -l en_US.UTF-8 -s freetype-sans"
+alias aiyo='eval $(thefuck $(fc -ln -1))' # 哎哟
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
