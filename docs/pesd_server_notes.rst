@@ -150,7 +150,9 @@ MATLAB
 
 Sometimes Matlab won't work because the Matlab license server isn't running.  To restart the Matlab license server uset the following command in the shell::
 
-    /usr/local/MATLAB/R2014a/etc/lmstart
+    /usr/local/MATLAB/R2014b/etc/lmstart
+
+It might give you a message saying "Error.  Cannot remove /var/tmp/lm_TMW.dat".  You should manually delete that file (i.e. "rm /var/tmp/lm_TMW.dat" and retry the previous command.
 
 If you want to use the non-GUI version of Matlab use (i.e. for use in nohup or tmux/screen)::
 
