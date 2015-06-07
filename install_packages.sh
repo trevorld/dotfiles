@@ -65,5 +65,9 @@ apt-get install libgtk2.0-dev libxml2-dev
 echo "Manually install Latex symbol selector"
 
 # Python
-sudo apt-get install python-pip python-dev
+sudo apt-get install python-pip python-dev python-setuptools build-essential
 sudo pip install the fuck
+sudo pip install csvkit
+
+# JSON
+sudo apt-get install jq
