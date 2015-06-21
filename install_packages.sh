@@ -69,5 +69,10 @@ sudo apt-get install python-pip python-dev python-setuptools build-essential
 sudo pip install the fuck
 sudo pip install csvkit
 
+# Rio
+wget https://raw.githubusercontent.com/jeroenjanssens/data-science-at-the-command-line/master/tools/Rio
+echo "Set-up Rio"
+
 # JSON
 sudo apt-get install jq
+sudo apt-get install lmagemagick # display
