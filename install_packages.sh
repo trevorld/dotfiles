@@ -8,6 +8,7 @@ echo "Set-up Firefox Sync"
 
 apt-get install pdfsam xsane # scanner tools
 
+apt-get install gourmet
 
 # version control software
 # sudo apt-get install git mercurial subversion
@@ -65,14 +66,15 @@ apt-get install libgtk2.0-dev libxml2-dev
 echo "Manually install Latex symbol selector"
 
 # Python
-sudo apt-get install python-pip python-dev python-setuptools build-essential
-sudo pip install the fuck
-sudo pip install csvkit
+apt-get install python-pip python-dev python-setuptools build-essential
+pip install the fuck
+pip install csvkit
 
 # Rio
 wget https://raw.githubusercontent.com/jeroenjanssens/data-science-at-the-command-line/master/tools/Rio
 echo "Set-up Rio"
 
+apt-get install siege
 # JSON
-sudo apt-get install jq
-sudo apt-get install lmagemagick # display
+apt-get install jq
+apt-get install imagemagick # display
