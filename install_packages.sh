@@ -8,7 +8,9 @@ echo "Set-up Firefox Sync"
 
 apt-get install pdfsam xsane # scanner tools
 
-apt-get install gourmet
+# apt-get install gourmet
+echo "Install gourmet"
+apt-get install python-distutils-extra
 
 # version control software
 # sudo apt-get install git mercurial subversion
