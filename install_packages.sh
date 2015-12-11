@@ -36,17 +36,11 @@ apt-get install -y gimp inkscape
 
 # Backup software
 apt-get install -y tcplay python-gpgme
-# truecrypt
-# dpkg -i src/spideroak*.deb # SpiderOak
-# Dropbox
-# dpkg -i src/dropbox*.deb
 apt-get install -y ibus-pinyin
 apt-get install -y fonts-arphic-gbsn00lp fonts-arphic-gkai00mp ttf-hanazono
 apt-get install -y anki
 
 apt-get install -y r-base-dev # R :-)
-# setup .Rprofile
-# rpackages
 apt-get install -y texlive-latex-recommended texlive-fonts-recommended texinfo texlive-latex-extra texlive-fonts-extra
 apt-get install -y latex-xcolor
 apt-get install -y rst2pdf qpdf python3-docutils
@@ -58,7 +52,6 @@ apt-get install -y libx11-dev tmux ncurses-term latexmk
 
 # Latex symbol selector
 apt-get install -y libgtk2.0-dev libxml2-dev
-# manually install latex symbol selector
 
 # Python
 apt-get install -y python-pip python-dev python-setuptools build-essential
@@ -74,9 +67,16 @@ apt-get install -y jq
 apt-get install -y imagemagick # display
 
 echo "Manually install Truecrypt, Dropbox, SpiderOak"
+# truecrypt
+# dpkg -i src/spideroak*.deb # SpiderOak
+# Dropbox
+# dpkg -i src/dropbox*.deb
 echo "Set-up Firefox Sync"
 echo "Install gourmet"
 echo "Set-up Rio"
+# setup .Rprofile
+# rpackages
 echo "Manually install Latex symbol selector"
+# manually install latex symbol selector
 echo "manually install vimcom or vimcom.plus package in R"
 echo "Run ibus-setup and set up dvorak keyboard"
