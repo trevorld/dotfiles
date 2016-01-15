@@ -157,3 +157,24 @@ It might give you a message saying "Error.  Cannot remove /var/tmp/lm_TMW.dat". 
 If you want to use the non-GUI version of Matlab use (i.e. for use in nohup or tmux/screen)::
 
    matlab -nodesktop -nosplash
+
+Adding new users
+----------------
+
+Let USER be the new username (probably lowercase).  An administrator can add them using::
+
+    sudo useradd -g pesd USER -d /home/USER -s /bin/bash
+    sudo mkdir /home/USER
+    sudo chown USER:pesd /home/USER
+    sudo passwd USER
+    sudo adduser USER samba
+
+An okay starting password would be::
+
+    echo "some string depending on USER but not this one" | sha512sum | cut -c -11
+
+If they forget their password you can change it for them with::
+
+    sudo passwd USER
+
+Remember that user might need to VPN onto Stanford network before can access the server.
