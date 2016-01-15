@@ -12,6 +12,6 @@ directories=$*
 for dir in $directories
 do
     if [ -d "$dir" ] ; then
-        zip -r ${prefix}_${dir}.zip ${dir}
+        zip -r ${prefix}${dir}.zip ${dir}
     fi
 done
