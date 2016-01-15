@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Usage: archive prefix list of directories to zip
+# Script to zip a list of directories with a prefit
+# Author: Trevor L Davis <trevor.l.davis@gmail.com>
+# License: revised BSD
+
+prefix=$1
+shift # discards first argument
+directories=$*
+
+for dir in $directories
+do
+    if [ -d "$dir" ] ; then
+        zip -r ${prefix}_${dir}.zip ${dir}
+    fi
+done
