@@ -148,6 +148,7 @@ alias rst2pdf="rst2pdf -s letter -l en_US.UTF-8 -s freetype-sans"
 alias aiyo='eval $(thefuck $(fc -ln -1))' # 哎哟
 alias o="xdg-open"
 alias pdfjoin="pdfjoin --paper letter"
+alias tmux="tmux -f ${HOME}/utilities/config/tmux.conf"
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
