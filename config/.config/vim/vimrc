@@ -135,7 +135,9 @@ endif
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Useful commands
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-com! Kwbd enew|bw #|bn
+com! Kwbd enew|bw #|bp
+com! Kwbn enew|bw #|bn
+com! Kwbp enew|bw #|bp
 com! Undiff set nodiff | set noscrollbind | set foldcolumn=0
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
