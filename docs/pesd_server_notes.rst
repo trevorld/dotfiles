@@ -178,3 +178,11 @@ If they forget their password you can change it for them with::
     sudo passwd USER
 
 Remember that user might need to VPN onto Stanford network before can access the server.
+
+Wiping a disk
+-------------
+
+::
+
+    sfdisk -l -x # gets drive names
+    wipe -kD DRIVEPATH  
