@@ -5,7 +5,8 @@ apt-get update
 # apt-get install -y firefox
 
 # apt-get install -y konqueror
-apt-get install -y pdfsam xsane # scanner tools
+apt-get install -y pdfsam 
+apt-get install -y xsane # scanner tools
 
 # apt-get install -y gourmet
 apt-get install -y python-distutils-extra
@@ -55,11 +56,11 @@ apt-get install -y libgtk2.0-dev libxml2-dev
 
 # Python
 apt-get install -y python-pip python-dev python-setuptools build-essential
-pip install the fuck
+pip install thefuck
 pip install csvkit
 
 # Rio
-wget https://raw.githubusercontent.com/jeroenjanssens/data-science-at-the-command-line/master/tools/Rio
+# wget https://raw.githubusercontent.com/jeroenjanssens/data-science-at-the-command-line/master/tools/Rio
 
 apt-get install -y siege
 # JSON
