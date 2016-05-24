@@ -55,13 +55,28 @@ if &t_Co > 2 && !has("gui_running")
   set background=dark
 endif
 
-" pathogen easy install vim modules
 try
-    source ~/src/vim/bundle/vim-pathogen/autoload/pathogen.vim
-    execute pathogen#infect('~/src/vim/bundle/{}')
+" " pathogen easy install vim modules
+"     source ~/src/vim/bundle/vim-pathogen/autoload/pathogen.vim
+"     execute pathogen#infect('~/src/vim/bundle/{}')
+" vim-plug
+  source ~/src/vim/bundle/vim-plug/plug.vim
+  call plug#begin('~/src/vim/bundle')
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'Rykka/InstantRst'
+  Plug 'Rykka/riv.vim'
+  Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+  Plug 'vim-scripts/utl.vim'
+  Plug 'vim-scripts/Vim-R-plugin'
+  Plug 'vim-scripts/VOom'
+  Plug 'vim-utils/vim-troll-stopper'
+  Plug 'drmikehenry/vim-fontsize'
+  Plug 'tpope/vim-fugitive'
+  call plug#end()
 catch
     " do nothing
 endtry
+
 
 " greater XDG compliance
 " should probably set defaults

@@ -4,7 +4,7 @@ function main {
     if [ -e $HOME/.bashrc ]
     then
         dropbox start
-        SpiderOak &
+        SpiderOakONE &
         source $HOME/.bashrc
     fi
 }
