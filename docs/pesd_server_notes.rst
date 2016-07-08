@@ -158,6 +158,31 @@ If you want to use the non-GUI version of Matlab use (i.e. for use in nohup or t
 
    matlab -nodesktop -nosplash
 
+Knitro
+------
+
+Frank has installed a trial version of Knitro on the server which he'll likely upgrade to a full version.  It has Matlab, Python, R, C/C++, C#, Fortran, Java, and AMPL interfaces.  For all version you'll need to set an environmental variable to the license file (the license filename will change upon upgrade to full version)::
+
+    export ARTELYS_LICENSE=/home/frank/knitro-10.1.0-z-Linux-64/ziena_lic_trial_artelysknitro_academicfull_2016-07-07_908b43880e.txt
+
+Here is how to run one of the Matlab examples (like ``exampleMINLP1.m``)::
+
+    cd /home/frank/knitro-10.1.0-z-Linux-64/knitromatlab
+    matlab # or matlab -nodesktop -nosplash BUT NOT matlab < exampleP1.m
+    exampleMINLP1
+
+To run a Python example (like ``exampleMINLP.py``)  you'll need to export (or modify) another environmental variable::
+
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/frank/knitro-10.1.0-z-Linux-64/lib
+    cd /home/frank/knitro-10.1.0-z-Linux-64/examples/Python
+    python exampleMINLP.py
+
+I've installed the ``KnitroR`` package necessary to to run the R examples (like ``minlp_case.r``)::
+
+    cd /home/frank/knitro-10.1.0-z-Linux-64/examples/R
+    Rscript minlp_case.r
+    
+
 Adding new users
 ----------------
 
