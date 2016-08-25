@@ -122,6 +122,7 @@ let g:Tex_SmartQuoteOpen = '"'
 let g:Tex_SmartQuoteClose = '"'
 let g:Tex_DefaultTargetFormat = "pdf"
 let g:Tex_ViewRule_pdf = "okular"
+let g:riv_fold_auto_update = 0
 
 " useful to spread spaces
 map <Leader>s i<space><Esc>la<space><Esc>h
@@ -182,6 +183,7 @@ if has("autocmd")
   augroup vimrcEx
     au!
     autocmd FileType text setlocal textwidth=79  " Set text file width to 79
+    set formatoptions=1
     " When editing a file, always jump to the last known cursor position.
     autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |

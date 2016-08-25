@@ -25,6 +25,14 @@ then
     export GTK_IM_MODULE=xim
 fi
 
+if [[ "$HOSTNAME" =~ "trevorld-Bonobo-Extreme" ]]
+then
+    export XMODIFIERS=@im=ibus
+    export QT_IM_MODULE=ibus
+    export GTK_IM_MODULE=xim
+    export DEV=/home/trevorld/projects/trading_game/development/cgi-bin
+fi
+
 export HISTSIZE=10000
 export SHELL=/bin/bash
 export podcasts=$HOME/media/SpiderOak/Podcasts
