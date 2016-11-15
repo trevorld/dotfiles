@@ -72,6 +72,9 @@ try
   Plug 'vim-utils/vim-troll-stopper'
   Plug 'drmikehenry/vim-fontsize'
   Plug 'tpope/vim-fugitive'
+  Plug 'luochen1990/rainbow'
+  let g:rainbow_active = 1
+  Plug 'scrooloose/syntastic'
   call plug#end()
 catch
     " do nothing
