@@ -9,6 +9,7 @@ apt-get install -y xsane # scanner tools
 apt-get install -y python-distutils-extra
 
 # apt-get install -y open-ssh-server
+# service restart ssh
 # apache? nginx?
 apt-get install -y git 
 
