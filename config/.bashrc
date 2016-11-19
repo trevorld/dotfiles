@@ -31,11 +31,18 @@ then
     export QT_IM_MODULE=ibus
     export GTK_IM_MODULE=xim
     export DEV=/home/trevorld/projects/trading_game/development/cgi-bin
+    alias anki="anki --base=${HOME}/data/Dropbox/Anki"
+fi
+if [[ "$HOSTNAME" =~ "stoic-sloth" ]]
+then
+    export XMODIFIERS=@im=ibus
+    export QT_IM_MODULE=ibus
+    export GTK_IM_MODULE=xim
+    alias anki="anki --base=${HOME}/a/sync/Dropbox/Anki"
 fi
 
 export HISTSIZE=10000
 export SHELL=/bin/bash
-export podcasts=$HOME/media/SpiderOak/Podcasts
 
 # Improve XDG standard compliance
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:=$HOME/.cache}
@@ -150,7 +157,6 @@ alias corn="ssh -X corn.stanford.edu"
 alias ssh="ssh -X"
 alias gvim="gvim -p"
 alias vim="vim -p"
-alias anki="anki --base=${HOME}/data/Dropbox/Anki"
 alias xstata="env TMPDIR=${HOME}/media/tmp xstata-se"
 alias rst2pdf="rst2pdf -s letter -l en_US.UTF-8 -s freetype-sans"
 alias aiyo='eval $(thefuck $(fc -ln -1))' # 哎哟

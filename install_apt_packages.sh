@@ -10,6 +10,7 @@ apt-get install -y python-distutils-extra
 
 # apt-get install -y open-ssh-server
 # service restart ssh
+# systemctl restart ssh
 # apache? nginx?
 apt-get install -y git 
 
