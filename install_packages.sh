@@ -15,6 +15,8 @@ apt-get install -y git
 
 apt-get install -y enigmail
 
+apt-get install -y cryptsetup # create encrypted USB drive
+
 # play media
 apt-get install -y audacity
 apt-get install -y browser-plugin-lightspark browser-plugin-gnash
