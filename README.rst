@@ -8,5 +8,5 @@ To install and use::
     bash$ cd
     bash$ git clone https://github.com/trevorld/utilities.git
     bash$ cd utilities/config
-    bash$ source init_config.sh
+    bash$ bash init_config.sh
 

@@ -2,4 +2,4 @@
 # Assumes there are text file versions of PopupChinese 
 # dialogues in $HOME/Podcasts/PopupChinese
 
-grep $1 $HOME/Podcasts/PopupChinese/*dialogue.txt
+grep $1 $HOME/a/media/podcasts/PopupChinese/*dialogue.txt

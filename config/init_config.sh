@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# config_original="$HOME/tmp/config_backup"
-# config=$HOME/projects/utilities/config
-UTILITIES_CONFIG_HOME=$HOME/utilities/config/
+UTILITIES_CONFIG_HOME=`pwd`
 
 if hash kde4-config
 then
@@ -34,6 +32,3 @@ UTILITIES_XDG_CONFIG_HOME=$UTILITIES_CONFIG_HOME/.config
 cd "$UTILITIES_XDG_CONFIG_HOME"
 find -type d -exec mkdir --parents -- "$XDG_CONFIG_HOME"/{} \;
 find -type f -exec ln --symbolic --interactive -- "$UTILITIES_XDG_CONFIG_HOME"/{} "$XDG_CONFIG_HOME"/{} \;
-
-source $HOME/.bashrc
-cd

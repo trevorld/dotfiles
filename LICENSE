@@ -1,5 +1,6 @@
-Unless otherwise specified in the file (in particular spark and todo.sh) all scripts and configuration files are copyright Trevor Davis and available under the revised-BSD license.  The .bashrc and .vimrc files are extension of automatically created versions and might hence be under some other FLOSS license.
+Unless otherwise specified in the file (in particular spark, Rio, and todo.sh) all scripts and configuration files are copyright Trevor Davis and available under the revised-BSD license.  The .bashrc and .vimrc files are extension of automatically created versions and might hence be under some other FLOSS license.
 
-spark is Copyright (c) Zach Holman, http://zachholman.com and available under the MIT licence
-todo.sh is Copyright Gina Trapani, Licensed under GPL-3 ( https://github.com/ginatrapani/todo.txt-cli/wiki 
+spark is Copyright Zach Holman, Licensed under the MIT licence ( http://zachholman.com )
+todo.sh is Copyright Gina Trapani, Licensed under GPL-3 ( https://github.com/ginatrapani/todo.txt-cli/wiki )
+Rio is Copyright Jeroen Janssens, Licensed under BSD 2-Clause ( https://github.com/jeroenjanssens/data-science-at-the-command-line )
 

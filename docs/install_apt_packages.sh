@@ -74,6 +74,4 @@ echo "Set-up Rio"
 # setup .Rprofile
 # rpackages
 echo "Manually install Latex symbol selector"
-# manually install latex symbol selector
-echo "manually install vimcom or vimcom.plus package in R"
 echo "Run ibus-setup and set up dvorak keyboard"
