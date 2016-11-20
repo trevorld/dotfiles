@@ -15,9 +15,10 @@ rsync
 
 Bonobo to Stoic::
 
-    rsync --dry-run -avh --progress --exclude=sync/Dropbox --delete -L 
-    rsync  -avh --progress --exclude=sync/Dropbox --delete -L 
-    rsync --dry-run -avh --progress --exclude=sync/Dropbox --delete -L ~/a/ trevorld@192.168.42.72:~/a
+    rsync --dry-run -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -L 
+    rsync  -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -L 
+    rsync --dry-run -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -L ~/a/ trevorld@192.168.42.72:~/a
+    rsync -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -L ~/a/ trevorld@192.168.42.72:~/a
     
 Stoic to Bonobo::
 
