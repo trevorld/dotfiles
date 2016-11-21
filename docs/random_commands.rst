@@ -17,10 +17,11 @@ Bonobo to Stoic::
 
     rsync --dry-run -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -L 
     rsync  -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -L 
-    rsync --dry-run -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -L ~/a/ trevorld@192.168.42.72:~/a
-    rsync -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -L ~/a/ trevorld@192.168.42.72:~/a
+    rsync --dry-run -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -L ~/a/ trevorld@192.168.42.72:~/a | tee ~/a/tmp/sync.txt
+    rsync -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -L ~/a/ trevorld@192.168.42.72:~/a | tee ~/a/tmp/sync.txt
     
 Stoic to Bonobo::
 
-    rsync dry-run -avh --progress --exclude=sync/Dropbox --delete -K 
-    rsync -avh --progress --exclude=sync/Dropbox --delete -K 
+    rsync --dry-run -avh --progress --exclude=sync/Dropbox --exclude=vms --delete -K trevorld@192.168.42.72:~/a/ ~/a | tee ~/a/tmp/sync.txt
+
+    rsync -avh --progress --exclude=sync/Dropbox --delete --exclude=vms -K  trevorld@192.168.42.72:~/a/ ~/a | tee ~/a/tmp/sync.txt

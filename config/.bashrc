@@ -20,6 +20,8 @@ then
     export DEV=/home/trevorld/a/projects/trading_game/development/cgi-bin
 fi
 
+export A=${HOME}/a
+
 export HISTSIZE=10000
 export SHELL=/bin/bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/lib
@@ -60,6 +62,11 @@ alias rst2pdf="rst2pdf -s letter -l en_US.UTF-8 -s freetype-sans"
 alias aiyo='eval $(thefuck $(fc -ln -1))' # 哎哟
 alias o="xdg-open"
 alias pdfjoin="pdfjoin --paper letter"
+
+## Functions
+function cda {
+    cd $A/$1
+}
 
 ## Stuff in default .bashrc file
 # If not running interactively, don't do anything
