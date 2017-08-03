@@ -60,8 +60,8 @@ try
 "     source ~/src/vim/bundle/vim-pathogen/autoload/pathogen.vim
 "     execute pathogen#infect('~/src/vim/bundle/{}')
 " vim-plug
-  source ~/src/vim/bundle/vim-plug/plug.vim
-  call plug#begin('~/src/vim/bundle')
+  source ~/a/media/software/vim/bundle/vim-plug/plug.vim
+  call plug#begin('~/a/media/software/vim/bundle')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'Rykka/InstantRst'
   Plug 'Rykka/riv.vim'
@@ -75,6 +75,7 @@ try
   Plug 'luochen1990/rainbow'
   let g:rainbow_active = 1
   Plug 'scrooloose/syntastic'
+  Plug 'chrisbra/csv.vim'
   call plug#end()
 catch
     " do nothing

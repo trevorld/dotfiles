@@ -1,20 +1,16 @@
 ﻿#!/usr/bin/bash
 
 apt-get update
-# apt-get install -y firefox
 
 apt-get install -y pdfsam 
 apt-get install -y xsane # scanner tools
 
 apt-get install -y python-distutils-extra
-
 # apt-get install -y open-ssh-server
 # service restart ssh
 # systemctl restart ssh
 # apache? nginx?
 apt-get install -y git 
-
-apt-get install -y enigmail
 
 apt-get install -y cryptsetup # create encrypted USB drive
 
@@ -35,7 +31,7 @@ apt-get install -y gimp inkscape
 
 # Backup software
 apt-get install -y tcplay python-gpgme enigmail
-apt-get install -y ibus-pinyin
+# apt-get install -y libopencc2 fcitx-libs fcitx-libs-qt
 apt-get install -y fonts-arphic-gbsn00lp fonts-arphic-gkai00mp ttf-hanazono
 apt-get install -y anki
 

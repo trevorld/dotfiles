@@ -124,26 +124,24 @@ This variable can also be permanently set in a configuration file like ``.bashrc
 NAG Fortran on FSI-PESD-Server
 ------------------------------
 
-The FSI-PESD-Server currently has the 64-bit, Mark 24, GNU Fortran Compiler 4.7 compatible version of the NAG Fortran Library installed in ``/opt/NAG/fll6a24dfl`` and a Multi-core 64-bit, Mark 32, GNU Fortran Compiler 4.6 compatible version of the NAG Fortran Library installed in ``/opt/NAG/fsl6a23dfl``.
+The FSI-PESD-Server currently has the 64-bit, Mark 26 (GNU Fortran Compiler 5.3 compatible) version of the NAG Fortran Library installed in ``/opt/NAG/fll6i26dfl`` and a Multi-core 64-bit, Mark 23 (GNU Fortran Compiler 4.6 compatible) version of the NAG Fortran Library installed in ``/opt/NAG/fsl6a23dfl``.
 
 You can generate example fortran scripts for all NAG routines in your working directory with the following command::
 
-	/opt/NAG/fll6a24dfl/scripts/nag_example XXXXXX  # Single-threaded Mark 24
+	/opt/NAG/fll6i26dfl/scripts/nag_example XXXXXX  # Single-threaded Mark 26
         /opt/NAG/fsl6a23dfl/scripts/nagsmp_example XXXXXX NUM_CORES # Multi-core Mark 23
 
 where XXXXXX is the code for the desired routine.  For example::
 
-	/opt/NAG/fll6a24dfl/scripts/nag_example e04ucf    # Single-threaded Mark 24
+	/opt/NAG/fll6i26dfl/scripts/nag_example e04ucf    # Single-threaded Mark 26
         /opt/NAG/fsl6a23dfl/scripts/nagsmp_example e01tnfe 2  # Multi-core  Mark 23
 
 The example single-threaded command tells you that it runs the following commands (as well as outputting the example program output)::
 
-	cp /opt/NAG/fll6a24dfl/examples/source/e04ucfe.f90 .
-	gfortran-4.7 -I/opt/NAG/fll6a24dfl/nag_interface_blocks e04ucfe.f90 /opt/NAG/fll6a24dfl/lib/libnag_nag.a -o e04ucfe.exe
-	cp /opt/NAG/fll6a24dfl/examples/data/e04ucfe.d .
-	./e04ucfe.exe < e04ucfe.d > e04ucfe.r
-
-The second line in particular shows how to compile a FORTRAN program while linking with the NAG library, note the use of ``gfortran-4.7`` or ``gfortran-4.6`` instead of ``gfortran``.  This is because ``gfortran`` on the server is version 4.8 but at the moment NAG does not have any version 4.8 compatible versions of their library so we must use an earlier version of gfortran with NAG.
+        cp /opt/NAG/fll6i26dfl/examples/source/e04ucfe.f90 .
+        gfortran -I/opt/NAG/fll6i26dfl/nag_interface_blocks e04ucfe.f90 /opt/NAG/fll6i26dfl/lib/libnag_nag.a -lstdc++ -o e04ucfe.exe
+        cp /opt/NAG/fll6i26dfl/examples/data/e04ucfe.d .
+        ./e04ucfe.exe < e04ucfe.d > e04ucfe.r
 
 MATLAB
 ------

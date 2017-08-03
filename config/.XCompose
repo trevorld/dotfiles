@@ -1,0 +1,86 @@
+# ~/.XCompose
+# This file defines custom Compose sequences for Unicode characters
+
+# Import default rules from the system Compose file:
+include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+
+# To put some stuff onto compose key strokes:
+# <Multi_key> <minus> <greater> : "→" U2192 # Compose - >
+# <Multi_key> <colon> <parenright> : "☺" U263A   # Compose : )
+<Multi_key> <b> <t> <w> : "by the way" # Compose b t w
+<Multi_key> <less> <p> : "<p></p>" # Compose < p
+<Multi_key> <underscore> <asciicircum> <e> : "ê̄"
+<Multi_key> <apostrophe> <asciicircum> <e> : "ế"
+<Multi_key> <c> <asciicircum> <e> : "ê̌"
+<Multi_key> <acute> <asciicircum> <e> : "ề"
+<Multi_key> <underscore> <asciicircum> <E> : "Ê̄"
+<Multi_key> <apostrophe> <asciicircum> <E> : "Ế"
+<Multi_key> <c> <asciicircum> <E> : "Ê̌"
+<Multi_key> <acute> <asciicircum> <E> : "Ề"
+<Multi_key> <underscore> <asciicircum> <o> : "ô̄"
+<Multi_key> <apostrophe> <asciicircum> <o> : "ố"
+<Multi_key> <c> <asciicircum> <o> : "ô̌"
+<Multi_key> <acute> <asciicircum> <o> : "ồ"
+<Multi_key> <underscore> <asciicircum> <O> : "Ô̄"
+<Multi_key> <apostrophe> <asciicircum> <O> : "Ố"
+<Multi_key> <c> <asciicircum> <O> : "Ô̌"
+<Multi_key> <acute> <asciicircum> <O> : "Ồ"
+<Multi_key> <comma> <z> : "z̧"
+<Multi_key> <comma> <Z> : "Z̧"
+
+<Multi_key> <asciicircum>  <asciicircum>  <h>: "ʰ" 
+<Multi_key> <underscore>  <underscore>  <h>: "ₕ" 
+<Multi_key> <asciicircum>  <asciicircum>  <j> : "ʲ" 
+<Multi_key> <underscore>  <underscore>  <j> : "ⱼ" 
+# <Multi_key> <asciicircum>  <asciicircum>  <q> : "" 
+# <Multi_key> <underscore>  <underscore>  <q> : "" 
+<Multi_key> <asciicircum>  <asciicircum>  <x> : "ˣ" 
+<Multi_key> <underscore>  <underscore>  <x> : "ₓ" 
+<Multi_key> <asciicircum> <asciicircum> <c> : "ᶜ" 
+# <Multi_key> <underscore>  <underscore>  <c> : "" 
+<Multi_key> <asciicircum>  <asciicircum>  <s> : "ˢ" 
+<Multi_key> <underscore>  <underscore>  <s> : "ₛ" 
+<Multi_key> <asciicircum>  <asciicircum>  <z> : "ᶻ" 
+# <Multi_key> <underscore>  <underscore>  <z> : "" 
+
+<Multi_key> <backslash> <comma> : "̧" U0327 # COMBINING CEDILLA
+# <Multi_key> <backslash> <comma> : "̡" U0321 # COMBINING PALATAL HOOK
+<Multi_key> <backslash> <slash> : "̷" U0337 # COMBINING SHORT SOLIDUS OVERLAY
+
+
+# From https://github.com/kragen/xcompose/blob/master/dotXCompose
+# Combining accents, for making things you don't have precomposed chars or keystrokes for:
+<Multi_key> <backslash> <equal>		: "̄"	U0304	# COMBINING MACRON
+<Multi_key> <backslash> <apostrophe>    : "́"   U0301   # COMBINING ACUTE ACCENT
+<Multi_key> <backslash> <c>		: "̌"	U030c	# COMBINING CARON
+<Multi_key> <backslash> <grave>	: "̀"  U0300   # COMBINING GRAVE ACCENT
+<Multi_key> <backslash> <asciicircum>    : "̂"   U0302   # COMBINING CIRCUMFLEX ACCENT
+<Multi_key> <backslash> <asciitilde>       : "̃"   U0303	# COMBINING TILDE
+
+<Multi_key> <backslash> <backslash> <equal>		: "̅"	U0305	# COMBINING OVERLINE -- ???
+<Multi_key> <backslash> <U>		: "̆"	U0306	# COMBINING BREVE
+<Multi_key> <backslash> <period>	: "̇"	U0307	# COMBINING DOT ABOVE
+<Multi_key> <backslash> <quotedbl>	: "̈"	U0308	# COMBINING DIAERESIS
+<Multi_key> <backslash> <question>	: "̉"	U0309	# COMBINING HOOK ABOVE
+<Multi_key> <backslash> <o>		: "̊"	U030a	# COMBINING RING ABOVE
+# That now conflicts with the new 🙌 in the system xcompose.  Alternative:
+<Multi_key> <backslash> <0>   	       	: "̊"	U030a	# COMBINING RING ABOVE
+<Multi_key> <backslash> <backslash> <apostrophe>	: "̋"	U030b	# COMBINING DOUBLE ACUTE ACCENT -- ??
+<Multi_key> <backslash> <bar>       	: "̍"	U030d	# COMBINING VERTICAL LINE ABOVE
+<Multi_key> <backslash> <2> <bar>	: "̎"	U030e	# COMBINING DOUBLE VERTICAL LINE ABOVE
+<Multi_key> <backslash> <2> <grave>	: "̏"	U030f	# COMBINING DOUBLE GRAVE ACCENT
+# For writing PSILI and DASIA in Greek
+# Ugh, better key-coding?  I may need @ for BELOW.
+<Multi_key> <backslash> <backslash> <backslash> <comma>	:	"̒"  U0312   # COMBINING TURNED COMMA ABOVE
+<Multi_key> <backslash> <backslash> <comma>	:	"̓"  U0313   # COMBINING COMMA ABOVE
+<Multi_key> <backslash> <backslash> <less> <comma>	:	"̔"   U0314   # COMBINING REVERSED COMMA ABOVE
+<Multi_key> <backslash> <f> <m>                 : "͒"   U0352   # COMBINING FERMATA
+<Multi_key> <backslash> <parenleft> <period>	: "̐"	U0310	# COMBINING CHANDRABINDU
+<Multi_key> <backslash> <i> <b>		: "̑"	U0311	# COMBINING INVERTED BREVE -- ??
+<Multi_key> <backslash> <parenleft> <parenright>: "⃝"  U20DD # COMBINING ENCLOSING CIRCLE
+<Multi_key> <backslash> <parenleft> <slash> <parenright>:    "⃠"	 U20E0	   # COMBINING ENCLOSING CIRCLE BACKSLASH
+<Multi_key> <backslash> <exclam>	: "̣"   U0323   # COMBINING DOT BELOW
+# With only one underscore it conflicts with stuff.
+<Multi_key> <backslash> <underscore> <underscore>	: "̱"	U0331	# COMBINING MACRON BELOW
+<Multi_key> <backslash> <backslash> <underscore>	: "̲"	U0332	# COMBINING LOW LINE
+<Multi_key> <backslash> <backslash> <backslash> <underscore> : "̳" U0333 # COMBINING DOUBLE LOW LINE

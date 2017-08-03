@@ -7,16 +7,16 @@ fi
 
 if [[ "$HOSTNAME" =~ "trevorld-Bonobo-Extreme" ]]
 then
-    export XMODIFIERS=@im=ibus
-    export QT_IM_MODULE=ibus
-    export GTK_IM_MODULE=xim
+    export XMODIFIERS="@im=fcitx"
+    export QT_IM_MODULE=fcitx
+    export GTK_IM_MODULE=fcitx
     export DEV=/home/trevorld/a/projects/trading_game/development/cgi-bin
 fi
 if [[ "$HOSTNAME" =~ "stoic-sloth" ]]
 then
-    export XMODIFIERS=@im=ibus
-    export QT_IM_MODULE=ibus
-    export GTK_IM_MODULE=xim
+    export XMODIFIERS="@im=fcitx"
+    export QT_IM_MODULE=fcitx
+    export GTK_IM_MODULE=fcitx
     export DEV=/home/trevorld/a/projects/trading_game/development/cgi-bin
 fi
 
@@ -62,6 +62,8 @@ alias rst2pdf="rst2pdf -s letter -l en_US.UTF-8 -s freetype-sans"
 alias aiyo='eval $(thefuck $(fc -ln -1))' # 哎哟
 alias o="xdg-open"
 alias pdfjoin="pdfjoin --paper letter"
+alias rsync="rsync -avh --exclude=sync/Dropbox --exclude=vms --exclude=*.swp --exclude=projects/trading_game/register_1.0 --exclude=projects/trading_game/development/WWW/records/independent"
+alias rsync2="command rsync -rvl --size-only --omit-dir-times --no-perms -e 'ssh -p 2222' --exclude=*.swp --exclude=*.git"
 
 ## Functions
 function cda {
@@ -121,3 +123,9 @@ esac
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+PATH="/home/trevorld/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/trevorld/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/trevorld/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/trevorld/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/trevorld/perl5"; export PERL_MM_OPT;
