@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage: archive prefix list of directories to zip
-# Script to zip a list of directories with a prefit
+# Script to zip a list of directories with a prefix
 # Author: Trevor L Davis <trevor.l.davis@gmail.com>
 # License: revised BSD
 
