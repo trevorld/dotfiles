@@ -18,17 +18,11 @@ if (grepl("^keynes", .hostname) || grepl("^corn", .hostname) || grepl("zu8330", 
 }
 
 if(interactive()) {
-    if(!require("tldutils")) {
-        if(!require("devtools")) {
-            utils::install.packages("devtools")
-        }
-        devtools::install_github("tldutils", "trevorld")
-    }
-    if (grepl("^keynes", .hostname) || grepl("^corn", .hostname)) {
-        invisible(NULL)
-    } else {
-        load_packages_robustly("devtools")
-    }
+    library("devtools")
+    suppressPackageStartupMessages(library("dplyr"))
+    library("ggplot2")
+    library("tidyr")
+    library("tldutils")
 }
 
 if(capabilities("cledit")) {

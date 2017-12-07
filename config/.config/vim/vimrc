@@ -73,10 +73,13 @@ try
   Plug 'drmikehenry/vim-fontsize'
   Plug 'tpope/vim-fugitive'
   Plug 'luochen1990/rainbow'
-  let g:rainbow_active = 1
   Plug 'scrooloose/syntastic'
   Plug 'chrisbra/csv.vim'
+  Plug 'nathangrigg/vim-beancount'
   call plug#end()
+
+  let g:rainbow_active = 1
+
 catch
     " do nothing
 endtry

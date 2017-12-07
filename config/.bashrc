@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/bin:$HOME/a/utilities/bin
+export PATH=$PATH:$HOME/bin:$HOME/a/utilities/bin:$HOME/.local/bin
 
 if [[ "$HOSTNAME" =~ "zareason-zu8330" ]]
 then
