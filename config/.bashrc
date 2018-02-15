@@ -54,6 +54,7 @@ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"
 alias 2='todo.sh'
 alias 2k='todo.sh kanban'
 alias anki="anki --base=${HOME}/a/sync/Dropbox/Anki"
+alias anki_beta="QT_XCB_FORCE_SOFTWARE_OPENGL=1 bin/anki --base=${HOME}/a/sync/Dropbox/Anki"
 alias ssh="ssh -X"
 alias gvim="gvim -p"
 alias vim="vim -p"

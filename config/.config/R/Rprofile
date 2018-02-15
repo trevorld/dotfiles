@@ -6,23 +6,14 @@
 
 options(browser="firefox", help.try.all.packages=TRUE, 
         repos=c("http://cran.cnr.berkeley.edu/","http://cran.stat.ucla.edu"), 
-        stringsAsFactors=FALSE, 
         warn=1, width=80, error=quote(utils::recover()),
-        editor='gvim -c "set ft=r"')
-
-if (grepl("^keynes", .hostname) || grepl("^corn", .hostname) || grepl("zu8330", .hostname)) {
-    options(help_type="text")
-} else {
-    # options(help_type="html")
-    options(help_type="text")
-}
+        editor='gvim -c "set ft=r"', help_type="text")
 
 if(interactive()) {
     library("devtools")
     suppressPackageStartupMessages(library("dplyr"))
     library("ggplot2")
     library("tidyr")
-    library("tldutils")
 }
 
 if(capabilities("cledit")) {
@@ -47,3 +38,5 @@ reset_width <- function() {
         options(width=120)}
     )
 }
+
+exit <- function(x) { quit('no') }
