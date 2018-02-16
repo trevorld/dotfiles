@@ -1,4 +1,3 @@
 #!/bin/bash
 dir=`pwd`
-in_string=$*
-find . -iname "*$in_string*" 2> /dev/null
+find . -iname "*$1*" 2> /dev/null

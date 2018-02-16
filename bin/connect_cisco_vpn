@@ -1,3 +1,0 @@
-#!/bin/bash 
-
-/opt/cisco/anyconnect/bin/vpn connect su-vpn.stanford.edu

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Assumes there are text file versions of PopupChinese 
-# dialogues in $HOME/Podcasts/PopupChinese
+# Assumes there are text file versions of popup_chinese
+# dialogues in $HOME/a/media/podcasts/popup_chinese
 
-grep $1 $HOME/a/media/podcasts/PopupChinese/*dialogue.txt
+grep $1 $HOME/a/media/podcasts/popup_chinese/*dialogue.txt
