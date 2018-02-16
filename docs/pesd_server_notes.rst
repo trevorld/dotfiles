@@ -4,9 +4,9 @@
 FSI-PESD-Server notes
 ~~~~~~~~~~~~~~~~~~~~~
 
-PESD has an Ubuntu Server (version 14.04 LTS) with 128GB of memory, 4 processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and home directories).
+PESD has an Ubuntu Server (version 16.04 LTS) with 128GB of memory, 4 processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and home directories).
 
-The server has Stata (release 13), SAS 9.4, NAG Fortran libraries (Mark 24), and Matlab as well as numerous open source tools such as R, Python, BASH, etc.
+The server has Stata, NAG Fortran libraries, and Matlab as well as numerous open source tools such as R, Python, BASH, etc.
 
 Logging in
 ----------
