@@ -36,7 +36,6 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:=$HOME/.config}
 export HISTFILE=$XDG_CACHE_HOME/bash/bash_history
 [ -d "$XDG_CACHE_HOME/bash" ] || mkdir -p $XDG_CACHE_HOME/bash
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
-export MATLABPATH=$XDG_CONFIG_HOME/matlab
 export R_PROFILE_USER=$XDG_CONFIG_HOME/R/Rprofile
 export R_LIBS_USER=$XDG_CONFIG_HOME/R/%p-platform/%v
 export R_HISTFILE=$XDG_CACHE_HOME/R/Rhistory
