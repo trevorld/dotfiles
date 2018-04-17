@@ -12,7 +12,7 @@ else
     true
 fi
 
-files=( .bashrc .hgrc )
+files=( .bashrc )
 for file in ${files[@]}
 do
     echo $file
