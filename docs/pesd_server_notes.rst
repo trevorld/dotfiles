@@ -124,61 +124,65 @@ This variable can also be permanently set in a configuration file like ``.bashrc
 NAG Fortran on FSI-PESD-Server
 ------------------------------
 
-The FSI-PESD-Server currently has the 64-bit, Mark 26 (GNU Fortran Compiler 5.3 compatible) version of the NAG Fortran Library installed in ``/opt/NAG/fll6i26dfl`` and a Multi-core 64-bit, Mark 23 (GNU Fortran Compiler 4.6 compatible) version of the NAG Fortran Library installed in ``/opt/NAG/fsl6a23dfl``.
+The FSI-PESD-Server currently has the 64-bit, Mark 26 (GNU Fortran Compiler 5.3 compatible) version of the NAG Fortran Library installed in ``/opt/NAG/fll6i26dfl``.
+
+.. and a Multi-core 64-bit, Mark 23 (GNU Fortran Compiler 4.6 compatible) version of the NAG Fortran Library installed in ``/opt/NAG/fsl6a23dfl``.
 
 You can generate example fortran scripts for all NAG routines in your working directory with the following command::
 
 	/opt/NAG/fll6i26dfl/scripts/nag_example XXXXXX  # Single-threaded Mark 26
-        /opt/NAG/fsl6a23dfl/scripts/nagsmp_example XXXXXX NUM_CORES # Multi-core Mark 23
+
+..        /opt/NAG/fsl6a23dfl/scripts/nagsmp_example XXXXXX NUM_CORES # Multi-core Mark 23
 
 where XXXXXX is the code for the desired routine.  For example::
 
 	/opt/NAG/fll6i26dfl/scripts/nag_example e04ucf    # Single-threaded Mark 26
-        /opt/NAG/fsl6a23dfl/scripts/nagsmp_example e01tnfe 2  # Multi-core  Mark 23
+
+..         /opt/NAG/fsl6a23dfl/scripts/nagsmp_example e01tnfe 2  # Multi-core  Mark 23
 
 The example single-threaded command tells you that it runs the following commands (as well as outputting the example program output)::
 
         cp /opt/NAG/fll6i26dfl/examples/source/e04ucfe.f90 .
-        gfortran -I/opt/NAG/fll6i26dfl/nag_interface_blocks e04ucfe.f90 /opt/NAG/fll6i26dfl/lib/libnag_nag.a -lstdc++ -o e04ucfe.exe
+        gfortran-5 -I/opt/NAG/fll6i26dfl/nag_interface_blocks e04ucfe.f90 /opt/NAG/fll6i26dfl/lib/libnag_nag.a -lstdc++ -o e04ucfe.exe
         cp /opt/NAG/fll6i26dfl/examples/data/e04ucfe.d .
         ./e04ucfe.exe < e04ucfe.d > e04ucfe.r
 
 MATLAB
 ------
 
-Sometimes Matlab won't work because the Matlab license server isn't running.  To restart the Matlab license server uset the following command in the shell::
+.. Sometimes Matlab won't work because the Matlab license server isn't running.  To restart the Matlab license server uset the following command in the shell::
 
     /usr/local/MATLAB/R2014b/etc/lmstart
 
-It might give you a message saying "Error.  Cannot remove /var/tmp/lm_TMW.dat".  You should manually delete that file (i.e. "rm /var/tmp/lm_TMW.dat" and retry the previous command.
+.. It might give you a message saying "Error.  Cannot remove /var/tmp/lm_TMW.dat".  You should manually delete that file (i.e. "rm /var/tmp/lm_TMW.dat" and retry the previous command.
 
 If you want to use the non-GUI version of Matlab use (i.e. for use in nohup or tmux/screen)::
 
    matlab -nodesktop -nosplash
 
-Knitro
-------
-
-Frank has installed a trial version of Knitro on the server which he'll likely upgrade to a full version.  It has Matlab, Python, R, C/C++, C#, Fortran, Java, and AMPL interfaces.  For all version you'll need to set an environmental variable to the license file (the license filename will change upon upgrade to full version)::
-
-    export ARTELYS_LICENSE=/home/frank/knitro-10.1.0-z-Linux-64/ziena_lic_trial_artelysknitro_academicfull_2016-07-07_908b43880e.txt
-
-Here is how to run one of the Matlab examples (like ``exampleMINLP1.m``)::
-
-    cd /home/frank/knitro-10.1.0-z-Linux-64/knitromatlab
-    matlab # or matlab -nodesktop -nosplash BUT NOT matlab < exampleP1.m
-    exampleMINLP1
-
-To run a Python example (like ``exampleMINLP.py``)  you'll need to export (or modify) another environmental variable::
-
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/frank/knitro-10.1.0-z-Linux-64/lib
-    cd /home/frank/knitro-10.1.0-z-Linux-64/examples/Python
-    python exampleMINLP.py
-
-I've installed the ``KnitroR`` package necessary to to run the R examples (like ``minlp_case.r``)::
-
-    cd /home/frank/knitro-10.1.0-z-Linux-64/examples/R
-    Rscript minlp_case.r
+.. Knitro
+.. ------
+.. 
+.. Frank has installed a trial version of Knitro on the server which he'll likely upgrade to a full version.  It has Matlab, Python, R, C/C++, C#, Fortran, Java, and AMPL interfaces.  For all version you'll need to set an environmental variable to the license file (the license filename will change upon upgrade to full version)::
+.. 
+..     export ARTELYS_LICENSE=/home/frank/knitro-10.1.0-z-Linux-64/ziena_lic_trial_artelysknitro_academicfull_2016-07-07_908b43880e.txt
+.. 
+.. Here is how to run one of the Matlab examples (like ``exampleMINLP1.m``)::
+.. 
+..     cd /home/frank/knitro-10.1.0-z-Linux-64/knitromatlab
+..     matlab # or matlab -nodesktop -nosplash BUT NOT matlab < exampleP1.m
+..     exampleMINLP1
+.. 
+.. To run a Python example (like ``exampleMINLP.py``)  you'll need to export (or modify) another environmental variable::
+.. 
+..     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/frank/knitro-10.1.0-z-Linux-64/lib
+..     cd /home/frank/knitro-10.1.0-z-Linux-64/examples/Python
+..     python exampleMINLP.py
+.. 
+.. I've installed the ``KnitroR`` package necessary to to run the R examples (like ``minlp_case.r``)::
+.. 
+..     cd /home/frank/knitro-10.1.0-z-Linux-64/examples/R
+..     Rscript minlp_case.r
     
 
 Adding new users
