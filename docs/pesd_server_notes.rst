@@ -218,3 +218,9 @@ Installing a SSL certificate for Apache
 ---------------------------------------
 
 Download X509 Certificate as ``server.crt``, Download Intermediate Certificate as ``fsi-pesd-server_stanford_edu_interm.cer``, and rename private key as ``server.key``.  Move all to ``/etc/apache2/ssl`` and only give root read permissions for ``server.key``.  Configuration is at ``/etc/apache2/sites-available/default-ssl.conf``.  Restart apache with ``sudo service apache2 restart``.
+
+Fix "A start job is running for Create Volatile Files..." hanging up server reboot
+----------------------------------------------------------------------------------
+
+* https://serverfault.com/questions/987488/boot-stuck-at-a-start-job-is-running-for-create-volatile-files-and-directories
+* https://askubuntu.com/questions/132965/how-do-i-boot-into-single-user-mode-from-grub
