@@ -1,4 +1,5 @@
-export PATH=$PATH:$HOME/bin:$HOME/a/utilities/bin:$HOME/.local/bin
+export PATH=$PATH:$HOME/bin:$HOME/a/utilities/bin:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/.cargo/bin
+export PYTHONPATH=$PYTHONPATH:unit_tests
 
 if [[ "$HOSTNAME" =~ "zareason-zu8330" ]]
 then
@@ -26,6 +27,7 @@ export HISTSIZE=10000
 export SHELL=/bin/bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/lib
 export EDITOR="/usr/bin/gvim"
+export GIT_EDITOR="/usr/bin/gvim -f"
 export COLUMNS
 
 ## Improve XDG standard compliance
@@ -37,7 +39,7 @@ export HISTFILE=$XDG_CACHE_HOME/bash/bash_history
 [ -d "$XDG_CACHE_HOME/bash" ] || mkdir -p $XDG_CACHE_HOME/bash
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
 export R_PROFILE_USER=$XDG_CONFIG_HOME/R/Rprofile
-export R_LIBS_USER=$XDG_CONFIG_HOME/R/%p-platform/%v
+# export R_LIBS_USER=$XDG_CONFIG_HOME/R/%p-platform/%v
 export R_HISTFILE=$XDG_CACHE_HOME/R/Rhistory
 [ -d $XDG_CACHE_HOME/R ] || mkdir $XDG_CACHE_HOME/R
 export TEXINPUTS=".:$XDG_CONFIG_HOME/latex:"
@@ -52,8 +54,9 @@ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"
 ## Aliases
 alias 2='todo.sh'
 alias 2k='todo.sh kanban'
-alias anki="anki --base=${HOME}/a/sync/Dropbox/Anki"
-alias anki_beta="QT_XCB_FORCE_SOFTWARE_OPENGL=1 bin/anki --base=${HOME}/a/sync/Dropbox/Anki"
+# alias anki="QT_XCB_FORCE_SOFTWARE_OPENGL=1 anki --base=${HOME}/a/sync/Dropbox/Anki"
+alias anki="QT_XCB_FORCE_SOFTWARE_OPENGL=1 anki --base=${HOME}/a/sync/Dropbox/Anki"
+# alias anki_beta="QT_XCB_FORCE_SOFTWARE_OPENGL=1 ~/tmp/anki_beta/bin/anki --base=${HOME}/tmp/Anki"
 alias ssh="ssh -X"
 alias gvim="gvim -p"
 alias vim="vim -p"
@@ -62,13 +65,18 @@ alias rst2pdf="rst2pdf -s letter -l en_US.UTF-8 -s freetype-sans"
 alias aiyo='eval $(thefuck $(fc -ln -1))' # 哎哟
 alias o="xdg-open"
 alias pdfjoin="pdfjoin --paper letter"
-alias rsync="rsync -avh --exclude=sync/Dropbox --exclude=vms --exclude=*.swp --exclude=projects/trading_game/register_1.0 --exclude=projects/trading_game/development/WWW/records/independent"
+alias rsync="rsync -avh --exclude=vms --exclude=*.swp --exclude=projects/trading_game/register_1.0 --exclude=projects/trading_game/development/WWW/records/independent"
+# alias rsync="rsync -avh --exclude=sync/Dropbox --exclude=vms --exclude=*.swp --exclude=projects/trading_game/register_1.0 --exclude=projects/trading_game/development/WWW/records/independent"
 alias rsync2="command rsync -rvl --size-only --omit-dir-times --no-perms -e 'ssh -p 2222' --exclude=*.swp --exclude=*.git"
+
+alias ga="git add"
+alias gc="git commit -m"
 
 ## Functions
 function cda {
     cd $A/$1
 }
+PS1="\w\$ "
 
 ## Stuff in default .bashrc file
 # If not running interactively, don't do anything
@@ -129,3 +137,7 @@ PERL5LIB="/home/trevorld/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5
 PERL_LOCAL_LIB_ROOT="/home/trevorld/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/trevorld/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/trevorld/perl5"; export PERL_MM_OPT;
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -37,7 +37,7 @@ apt-get install -y fonts-noto fonts-symbola fonts-firacode fonts-sil-charis
 apt-get install -y anki
 
 apt-get install -y r-base-dev # R :-)
-apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-xetex texlive-luatex texinfo texlive-latex-extra texlive-fonts-extra latex-xcolor 
+apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-xetex texlive-luatex texinfo texlive-latex-extra texlive-fonts-extra latex-xcolor texlive-bibtex-extra
 apt-get install -y rst2pdf python3-docutils
 
 # Vim :-)

@@ -7,6 +7,122 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 # To put some stuff onto compose key strokes:
 # <Multi_key> <minus> <greater> : "→" U2192 # Compose - >
 # <Multi_key> <colon> <parenright> : "☺" U263A   # Compose : )
+
+# Quickscript
+<Multi_key> <q> <p>     : "" # Quickscript No. 01 /p/
+<Multi_key> <q> <b>     : "" # Quickscript No. 02 /b/
+<Multi_key> <q> <t>     : "" # Quickscript No. 03 /t/
+<Multi_key> <q> <d>     : "" # Quickscript No. 04 /d/
+<Multi_key> <q> <k>     : "" # Quickscript No. 05 /k/
+<Multi_key> <q> <g>     : "" # Quickscript No. 06 /g/
+<Multi_key> <q> <T>     : "" # Quickscript No. 07 /θ/
+<Multi_key> <q> <D>     : "" # Quickscript No. 08 /ð/
+<Multi_key> <q> <f>     : "" # Quickscript No. 09 /f/
+<Multi_key> <q> <v>     : "" # Quickscript No. 10 /v/
+<Multi_key> <q> <s>     : "" # Quickscript No. 11 /s/
+<Multi_key> <q> <z>     : "" # Quickscript No. 12 /z/
+<Multi_key> <q> <S>     : "" # Quickscript No. 13 /ʃ/ 
+<Multi_key> <q> <Z>     : "" # Quickscript No. 14 /ʒ/
+<Multi_key> <Q> <t> <S>            : "" # Quickscript No. 15 /tʃ/
+<Multi_key> <q> <asterisk> <t> <S> : "" # Quickscript No. 15 /tʃ/
+<Multi_key> <Q> <d> <Z>            : "" # Quickscript No. 16 /dʒ/
+<Multi_key> <q> <asterisk> <d> <Z> : "" # Quickscript No. 15 /dʒ/
+<Multi_key> <q> <j>     : "" # Quickscript No. 17 /j/
+<Multi_key> <q> <w>     : "" # Quickscript No. 18 /w/
+<Multi_key> <q> <h>     : "" # Quickscript No. 19 /h/
+<Multi_key> <q> <W>     : "" # Quickscript No. 20 /ʍ/
+<Multi_key> <q> <N>     : "" # Quickscript No. 21 /ŋ/ 
+<Multi_key> <q> <m>     : "" # Quickscript No. 22 /m/
+<Multi_key> <q> <n>     : "" # Quickscript No. 23 /n/
+<Multi_key> <q> <l>     : "" # Quickscript No. 24 /l/
+<Multi_key> <q> <r>                 : "" # Quickscript No. 25 /ɹ/ [r\]
+<Multi_key> <q> <backslash> <r>     : "" # Quickscript No. 25 /ɹ/ [r\]
+<Multi_key> <q> <I>     : "" # Quickscript No. 26 /ɪ/
+<Multi_key> <q> <i>     : "" # Quickscript No. 27 /i/
+<Multi_key> <q> <E>     : "" # Quickscript No. 28 /ɛ/ 
+<Multi_key> <Q> <e> <I>            : "" # Quickscript No. 29 /eɪ/
+<Multi_key> <q> <asterisk> <e> <I> : "" # Quickscript No. 29 /eɪ/
+<Multi_key> <q> <braceleft>  : "" # Quickscript No. 30 /æ/
+<Multi_key> <Q> <a> <I>            : "" # Quickscript No. 31 /aɪ/
+<Multi_key> <q> <asterisk> <a> <I> : "" # Quickscript No. 31 /aɪ/
+<Multi_key> <q> <A>     : "" # Quickscript No. 32 /ɑ/
+<Multi_key> <q> <O>     : "" # Quickscript No. 33 /ɔ/
+<Multi_key> <q> <Q>     : "" # Quickscript No. 34 /ɒ/
+<Multi_key> <Q> <O> <I>            : "" # Quickscript No. 31 /aɪ/
+<Multi_key> <q> <asterisk> <O> <I> : "" # Quickscript No. 31 /aɪ/
+<Multi_key> <q> <at>      : "" # Quickscript No. 36 /ə/ [@]
+<Multi_key> <q> <V>       : "" # Quickscript No. 36 /ʌ/ [V]
+<Multi_key> <Q> <a> <U>            : "" # Quickscript No. 37 /aʊ/
+<Multi_key> <q> <asterisk> <a> <U> : "" # Quickscript No. 37 /aʊ/
+<Multi_key> <Q> <o> <U>             : "" # Quickscript No. 38 /oʊ/
+<Multi_key> <Q> <at> <U>            : "" # Quickscript No. 38 /əʊ/
+<Multi_key> <q> <asterisk> <at> <U> : "" # Quickscript No. 38 /əʊ/
+<Multi_key> <q> <asterisk> <o> <U>  : "" # Quickscript No. 38 /oʊ/
+<Multi_key> <q> <U>     : "" # Quickscript No. 39 /ʊ/
+<Multi_key> <q> <u>     : "" # Quickscript No. 40 /u/
+<Multi_key> <q> <x>     : "" # Quickscript  /x/
+<Multi_key> <q> <K>     : "" # Quickscript  /ɬ/
+<Multi_key> <Q> <k> <s> : "" # Quickscript  /k's/
+<Multi_key> <q> <asterisk> <k> <s> : "" # Quickscript  /k's/
+<Multi_key> <Q> <g> <z> : "" # Quickscript  /g'z/
+<Multi_key> <q> <asterisk> <g> <z> : "" # Quickscript  /g'z/
+
+<Multi_key> <q> <colon>                : "·" # Quickscript  Namer Dot [:\]
+<Multi_key> <q> <backslash> <colon>    : "·" # Quickscript  Namer Dot [:\]
+
+<Multi_key> <q> <parenleft>      : "(" # Quickscript Left Bracket
+<Multi_key> <q> <parenright>     : ")" # Quickscript Right Bracket
+<Multi_key> <q> <bracketleft>      : "(" # Quickscript Left Bracket
+<Multi_key> <q> <bracketright>     : ")" # Quickscript Right Bracket
+
+## IPA
+# Quickscript
+<Multi_key> <p> <T>                 : "θ"
+<Multi_key> <p> <D>                 : "ð"
+<Multi_key> <p> <f>                 : "f"
+<Multi_key> <p> <S>                 : "ʃ"
+<Multi_key> <p> <Z>                 : "ʒ" 
+<Multi_key> <p> <W>                 : "ʍ"
+<Multi_key> <p> <N>                 : "Ŋ" 
+<Multi_key> <P> <r> <backslash>     : "ɹ"
+<Multi_key> <p> <backslash> <r>     : "ɹ"
+<Multi_key> <p> <I>                 : "ɪ" 
+<Multi_key> <p> <E>                 : "ɛ" 
+<Multi_key> <p> <braceleft>         : "æ"
+<Multi_key> <p> <A>                 : "ɑ"
+<Multi_key> <p> <O>                 : "ɔ"
+<Multi_key> <p> <Q>                 : "ɒ"
+<Multi_key> <p> <at>                : "ə"
+<Multi_key> <p> <V>                 : "ʌ"
+<Multi_key> <p> <U>                 : "ʊ"
+# Mandarin
+<Multi_key> <p> <underscore> <h>           : "ʰ" 
+<Multi_key> <p> <backslash> <s>            : "ɕ" 
+<Multi_key> <P> <s> <backslash>            : "ɕ" 
+<Multi_key> <P> <s> <grave>                : "ʂ" 
+<Multi_key> <p> <grave> <s>                : "ʂ" 
+<Multi_key> <P> <r> <backslash> <grave>    : "ɻ"
+<Multi_key> <p> <backslash> <grave> <r>    : "ɻ"
+<Multi_key> <p> <H>                        : "ɥ"
+<Multi_key> <p> <asciicircum> <apostrophe> : " ̩" # syllabic consonant combiner
+<Multi_key> <p> <7>                        : "ɤ"
+<Multi_key> <p> <grave> <r>                : "˞" # rhotic vowel combiner 
+
+# Extra marks
+<Multi_key> <asciicircum>  <asciicircum>  <h>: "ʰ" 
+<Multi_key> <underscore>  <underscore>  <h>: "ₕ" 
+<Multi_key> <asciicircum>  <asciicircum>  <j> : "ʲ" 
+<Multi_key> <underscore>  <underscore>  <j> : "ⱼ" 
+# <Multi_key> <asciicircum>  <asciicircum>  <q> : "" 
+# <Multi_key> <underscore>  <underscore>  <q> : "" 
+<Multi_key> <asciicircum>  <asciicircum>  <x> : "ˣ" 
+<Multi_key> <underscore>  <underscore>  <x> : "ₓ" 
+<Multi_key> <asciicircum> <asciicircum> <c> : "ᶜ" 
+# <Multi_key> <underscore>  <underscore>  <c> : "" 
+<Multi_key> <asciicircum>  <asciicircum>  <s> : "ˢ" 
+<Multi_key> <underscore>  <underscore>  <s> : "ₛ" 
+<Multi_key> <asciicircum>  <asciicircum>  <z> : "ᶻ" 
+# <Multi_key> <underscore>  <underscore>  <z> : "" 
 <Multi_key> <b> <t> <w> : "by the way" # Compose b t w
 <Multi_key> <less> <p> : "<p></p>" # Compose < p
 <Multi_key> <underscore> <asciicircum> <e> : "ê̄"
@@ -27,22 +143,6 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key> <acute> <asciicircum> <O> : "Ồ"
 <Multi_key> <comma> <z> : "z̧"
 <Multi_key> <comma> <Z> : "Z̧"
-
-<Multi_key> <asciicircum>  <asciicircum>  <h>: "ʰ" 
-<Multi_key> <underscore>  <underscore>  <h>: "ₕ" 
-<Multi_key> <asciicircum>  <asciicircum>  <j> : "ʲ" 
-<Multi_key> <underscore>  <underscore>  <j> : "ⱼ" 
-# <Multi_key> <asciicircum>  <asciicircum>  <q> : "" 
-# <Multi_key> <underscore>  <underscore>  <q> : "" 
-<Multi_key> <asciicircum>  <asciicircum>  <x> : "ˣ" 
-<Multi_key> <underscore>  <underscore>  <x> : "ₓ" 
-<Multi_key> <asciicircum> <asciicircum> <c> : "ᶜ" 
-# <Multi_key> <underscore>  <underscore>  <c> : "" 
-<Multi_key> <asciicircum>  <asciicircum>  <s> : "ˢ" 
-<Multi_key> <underscore>  <underscore>  <s> : "ₛ" 
-<Multi_key> <asciicircum>  <asciicircum>  <z> : "ᶻ" 
-# <Multi_key> <underscore>  <underscore>  <z> : "" 
-
 <Multi_key> <backslash> <comma> : "̧" U0327 # COMBINING CEDILLA
 # <Multi_key> <backslash> <comma> : "̡" U0321 # COMBINING PALATAL HOOK
 <Multi_key> <backslash> <slash> : "̷" U0337 # COMBINING SHORT SOLIDUS OVERLAY

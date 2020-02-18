@@ -11,13 +11,6 @@ if v:progname =~? "evim"
   finish
 endif
 
-" if $USER == "m1tld01"
-"     let place = "work"
-" elseif $USER == "trevorld"
-"     let place = "home"
-" endif
-
-
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Useful Settings
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,7 +62,6 @@ try
   Plug 'vim-scripts/utl.vim'
   Plug 'vim-scripts/Vim-R-plugin'
   Plug 'vim-scripts/VOom'
-  Plug 'vim-utils/vim-troll-stopper'
   Plug 'drmikehenry/vim-fontsize'
   Plug 'tpope/vim-fugitive'
   Plug 'luochen1990/rainbow'
@@ -79,6 +71,9 @@ try
   call plug#end()
 
   let g:rainbow_active = 1
+  let g:syntastic_enable_r_lintr_checker = 1
+  let g:syntastic_r_checkers = ['lintr']
+  let g:syntastic_r_lintr_linters = "with_defaults(infix_spaces_linter=NULL, line_length_linter(120))"
 
 catch
     " do nothing
