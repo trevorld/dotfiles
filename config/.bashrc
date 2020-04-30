@@ -60,6 +60,7 @@ alias anki="QT_XCB_FORCE_SOFTWARE_OPENGL=1 anki --base=${HOME}/a/sync/Dropbox/An
 alias ssh="ssh -X"
 alias gvim="gvim -p"
 alias vim="vim -p"
+alias R="R --no-restore-data --no-save --quiet"
 alias xstata="xstata-se"
 alias rst2pdf="rst2pdf -s letter -l en_US.UTF-8 -s freetype-sans"
 alias aiyo='eval $(thefuck $(fc -ln -1))' # 哎哟

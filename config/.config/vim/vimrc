@@ -48,37 +48,6 @@ if &t_Co > 2 && !has("gui_running")
   set background=dark
 endif
 
-try
-" " pathogen easy install vim modules
-"     source ~/src/vim/bundle/vim-pathogen/autoload/pathogen.vim
-"     execute pathogen#infect('~/src/vim/bundle/{}')
-" vim-plug
-  source ~/a/media/software/vim/bundle/vim-plug/plug.vim
-  call plug#begin('~/a/media/software/vim/bundle')
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'Rykka/InstantRst'
-  Plug 'Rykka/riv.vim'
-  Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
-  Plug 'vim-scripts/utl.vim'
-  Plug 'vim-scripts/Vim-R-plugin'
-  Plug 'vim-scripts/VOom'
-  Plug 'drmikehenry/vim-fontsize'
-  Plug 'tpope/vim-fugitive'
-  Plug 'luochen1990/rainbow'
-  Plug 'scrooloose/syntastic'
-  Plug 'chrisbra/csv.vim'
-  Plug 'nathangrigg/vim-beancount'
-  call plug#end()
-
-  let g:rainbow_active = 1
-  let g:syntastic_enable_r_lintr_checker = 1
-  let g:syntastic_r_checkers = ['lintr']
-  let g:syntastic_r_lintr_linters = "with_defaults(infix_spaces_linter=NULL, line_length_linter(120))"
-
-catch
-    " do nothing
-endtry
-
 
 " greater XDG compliance
 " should probably set defaults
@@ -178,6 +147,8 @@ if has("autocmd")
     "Let us use LSS (Latex Symbol Selector) with out .tex and .Rnw files
     autocmd BufEnter *.tex imap <F8> <Esc>:silent !lss &<cr>a
     autocmd BufEnter *.Rnw imap <F8> <Esc>:silent !lss &<cr>a
+    " Remove trailing whitespace
+    au BufWritePre *.{py,R,r} %s/\s\+$//e
 
   augroup END
 
@@ -199,6 +170,39 @@ else
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
+
+try
+" " pathogen easy install vim modules
+"     source ~/src/vim/bundle/vim-pathogen/autoload/pathogen.vim
+"     execute pathogen#infect('~/src/vim/bundle/{}')
+" vim-plug
+  source ~/a/media/software/vim/bundle/vim-plug/plug.vim
+  call plug#begin('~/a/media/software/vim/bundle')
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'Rykka/InstantRst'
+  Plug 'Rykka/riv.vim'
+  Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+  Plug 'vim-scripts/utl.vim'
+  Plug 'vim-scripts/Vim-R-plugin'
+  Plug 'vim-scripts/VOom'
+  Plug 'drmikehenry/vim-fontsize'
+  Plug 'tpope/vim-fugitive'
+  Plug 'luochen1990/rainbow'
+  Plug 'scrooloose/syntastic'
+  Plug 'chrisbra/csv.vim'
+  Plug 'nathangrigg/vim-beancount'
+  Plug 'Vimjas/vim-python-pep8-indent'
+  call plug#end()
+
+  let g:rainbow_active = 1
+  let g:syntastic_enable_r_lintr_checker = 0
+  let g:syntastic_r_checkers = ['lintr']
+  let g:syntastic_r_lintr_linters = "with_defaults(infix_spaces_linter=NULL, line_length_linter(120))"
+
+catch
+    " do nothing
+endtry
+
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " custom Latex-Suite style mappings and settings for my Rnoweb and Latex files
