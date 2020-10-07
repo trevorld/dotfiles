@@ -4,7 +4,7 @@
 FSI-PESD-Server notes
 ~~~~~~~~~~~~~~~~~~~~~
 
-PESD has an Ubuntu Server (version 16.04 LTS) with 128GB of memory, 4 processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and home directories).
+PESD has an Ubuntu Server (version 20.04 LTS) with 128GB of memory, 4 processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and a 1 TB SSD hard drive for the home directories).
 
 The server has Stata, NAG Fortran libraries, and Matlab as well as numerous open source tools such as R, Python, BASH, etc.
 
@@ -159,6 +159,11 @@ MATLAB
 If you want to use the non-GUI version of Matlab use (i.e. for use in nohup or tmux/screen)::
 
    matlab -nodesktop -nosplash
+
+R
+--
+
+We have R installed, you can either use the command-line version with the ``R`` or ``Rscript`` commands or use R Studio Server's web-based GUI: http://fsi-pesd-server.stanford.edu:8787
 
 .. Knitro
 .. ------
