@@ -8,6 +8,9 @@ PESD has an Ubuntu Server (version 20.04 LTS) with 128GB of memory, 4 processors
 
 The server has Stata, NAG Fortran libraries, and Matlab as well as numerous open source tools such as R, Python, BASH, etc.
 
+Intro
+~~~~~
+
 Logging in
 ----------
 
@@ -104,6 +107,9 @@ Killing Jobs
 
 There are two main commands for killing currently running jobs: ``kill`` and ``killall``.  If you want to kill all the instances of a certain executable you have launched you can use ``killall executable_name``, for example ``killall R`` or ``killall python``.  Doing so will not affect jobs launched by other users.  If you want to kill a specific job use ``kill PID``.  You can get the PID number of a job by either using ``top`` or ``ps aux``.  Oftentimes you'll want to pipe the output of ``ps aux`` to ``grep`` in order to filter the output to a smaller number of jobs such as ``ps aux | grep $USERNAME`` to find all jobs that ``$USERNAME`` has running or ``ps aux | grep matlab`` in order to see all matlab jobs that are currently running.
 
+Computational Software Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 STATA
 -----
 
@@ -120,9 +126,8 @@ NB. Stata writes alot of temporary files to the location of ``$TMPDIR`` which by
 
 This variable can also be permanently set in a configuration file like ``.bashrc`` (in the example above the ``xstata`` alias always sets ``$TMPDIR`` to ``/data/tmp``).
 
-
-NAG Fortran on FSI-PESD-Server
-------------------------------
+NAG Fortran
+-----------
 
 The FSI-PESD-Server currently has the 64-bit, Mark 26 (GNU Fortran Compiler 5.3 compatible) version of the NAG Fortran Library installed in ``/opt/NAG/fll6i26dfl``.
 
@@ -165,6 +170,8 @@ R
 
 We have R installed, you can either use the command-line version with the ``R`` or ``Rscript`` commands or use R Studio Server's web-based GUI: http://fsi-pesd-server.stanford.edu:8787
 
+If using RStudio Server and see an "RStudio Initialization Error: Error occurred during transmission" try deleting the ``.rstudio`` directory in your home directory.
+
 .. Knitro
 .. ------
 .. 
@@ -189,6 +196,8 @@ We have R installed, you can either use the command-line version with the ``R`` 
 ..     cd /home/frank/knitro-10.1.0-z-Linux-64/examples/R
 ..     Rscript minlp_case.r
     
+Admin Notes
+~~~~~~~~~~~
 
 Adding new users
 ----------------
@@ -229,3 +238,8 @@ Fix "A start job is running for Create Volatile Files..." hanging up server rebo
 
 * https://serverfault.com/questions/987488/boot-stuck-at-a-start-job-is-running-for-create-volatile-files-and-directories
 * https://askubuntu.com/questions/132965/how-do-i-boot-into-single-user-mode-from-grub
+
+Troubleshooting network connectivity issues
+-------------------------------------------
+
+* https://upcloud.com/community/tutorials/troubleshoot-network-connectivity-linux-server/
