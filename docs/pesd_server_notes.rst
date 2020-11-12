@@ -1,12 +1,20 @@
+~~~~~~~~~~~~~~~~~~~~~~~
+PESD Linux Server notes
+~~~~~~~~~~~~~~~~~~~~~~~
+
+PESD has two Ubuntu Linux servers:
+
+fsi-pesd-server.stanford.edu
+    This server (Ubuntu 20.04 LTS) has 128GB of memory, 4 CPU processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and a 1 TB SSD hard drive for the home directories).
+
+    The server has Stata, NAG Fortran libraries, and Matlab as well as numerous open source tools such as R, Python, BASH, etc.
+
+fsi-pesd.stanford.edu
+    This server (Ubuntu 20.04 LTS) has 256GB of memory, 1 CPU processor with 32 cores, and 2TB+4TB NVMe hard drives.
+
+    The server has Stata as well as numerous open source tools such as R, Python, Bash, etc.
+
 .. contents::
-
-~~~~~~~~~~~~~~~~~~~~~
-FSI-PESD-Server notes
-~~~~~~~~~~~~~~~~~~~~~
-
-PESD has an Ubuntu Server (version 20.04 LTS) with 128GB of memory, 4 processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and a 1 TB SSD hard drive for the home directories).
-
-The server has Stata, NAG Fortran libraries, and Matlab as well as numerous open source tools such as R, Python, BASH, etc.
 
 Intro
 ~~~~~
@@ -40,7 +48,7 @@ After ``xinit`` has been installed you should be able to start X-windows and an 
 Data storage
 ------------
 
-Your home directories are currently located on a dedicated 1TB SSD hard drive.  If you have any large datasets you aren't actively reading/writing to then it might be a good idea to place them on the slower 4TB hard drive which has been mounted to `/data`.  Note you can create a symbolic link in your home directory that points to other directories::
+Your home directories are currently located on a 1TB SSD hard drive.  If you have any large datasets you aren't actively reading/writing to then it might be a good idea to place them on the slower 4TB hard drive which has been mounted to `/data`.  Note you can create a symbolic link in your home directory that points to other directories::
 
   bash$ ln -s /data/your_project_subdirectory link_name
 
@@ -113,6 +121,9 @@ Computational Software Notes
 STATA
 -----
 
+fsi-pesd-server
++++++++++++++++
+
 We have a 2-user network license for Stata 13.1.  This means up to two different users can have open multiple sessions of Stata.
 
 NB. the ``stata``, ``xstata``, ``stata-sm``, ``xstata-sm`` commands will launch data limited versions of stata.  Instead use the ``stata-se``, ``xstata-se``, ``stata-mp``, or ``xstata-mp`` commands (since we didn't buy MP version of stata the latter two should be equivalent to the SE version) which do not have data size restriction imposed on them.  If you are using a ``.bashrc`` configuration file for your bash shell you may want it to include an alias like::
@@ -125,6 +136,11 @@ NB. Stata writes alot of temporary files to the location of ``$TMPDIR`` which by
    env TMPDIR=/data/tmp stata-se < filename.do > filename.log &
 
 This variable can also be permanently set in a configuration file like ``.bashrc`` (in the example above the ``xstata`` alias always sets ``$TMPDIR`` to ``/data/tmp``).
+
+fsi-pesd
+++++++++
+
+We have unlimited-user 4-core network license for Stata 16.1.  Use the ``stata-mp`` or ``xstata-mp`` commands.
 
 NAG Fortran
 -----------
@@ -168,7 +184,12 @@ If you want to use the non-GUI version of Matlab use (i.e. for use in nohup or t
 R
 --
 
-We have R installed, you can either use the command-line version with the ``R`` or ``Rscript`` commands or use R Studio Server's web-based GUI: http://fsi-pesd-server.stanford.edu:8787
+We have R installed, you can either use the command-line version with the ``R`` or ``Rscript`` commands.
+
+fsi-pesd-server
++++++++++++++++
+
+fsi-pesd-server also has R Studio Server's web-based GUI: http://fsi-pesd-server.stanford.edu:8787
 
 If using RStudio Server and see an "RStudio Initialization Error: Error occurred during transmission" try deleting the ``.rstudio`` directory in your home directory.
 
@@ -231,7 +252,8 @@ Wiping a disk
 Installing a SSL certificate for Apache
 ---------------------------------------
 
-Download X509 Certificate as ``server.crt``, Download Intermediate Certificate as ``fsi-pesd-server_stanford_edu_interm.cer``, and rename private key as ``server.key``.  Move all to ``/etc/apache2/ssl`` and only give root read permissions for ``server.key``.  Configuration is at ``/etc/apache2/sites-available/default-ssl.conf``.  Restart apache with ``sudo service apache2 restart``.
+* https://certbot.eff.org/instructions
+
 
 Fix "A start job is running for Create Volatile Files..." hanging up server reboot
 ----------------------------------------------------------------------------------
