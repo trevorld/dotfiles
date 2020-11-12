@@ -30,6 +30,7 @@ set expandtab           " insert spaces instead of tabs
 set history=50		" keep 50 lines of command line history
 set ignorecase          " ignore cases while searching
 set incsearch		" do incremental searching
+set maxmempattern=2000000 " solves error message
 set number              " show line numbers
 set ruler		" show the cursor position all the time
 set shell=/bin/bash
