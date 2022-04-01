@@ -5,14 +5,14 @@ PESD Linux Server notes
 PESD has two Ubuntu Linux servers:
 
 fsi-pesd-server.stanford.edu
-    This server (Ubuntu 20.04 LTS) has 128GB of memory, 4 CPU processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and a 1 TB SSD hard drive for the home directories).
+    This older server (Ubuntu 20.04 LTS) has 128GB of memory, 4 CPU processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and a 1 TB SSD hard drive for the home directories).
 
-    The server has Stata, NAG Fortran libraries, and Matlab as well as numerous open source tools such as R, Python, BASH, etc.
+    The server has Knitro, Stata, NAG Fortran libraries, and Matlab as well as numerous open source tools such as R, Python, BASH, etc.
 
 fsi-pesd.stanford.edu
-    This server (Ubuntu 20.04 LTS) has 256GB of memory, 1 CPU processor with 32 cores, and 2TB+4TB NVMe hard drives.
+    This newer server (Ubuntu 20.04 LTS) has 256GB of memory, 1 CPU processor with 32 cores, and 2TB+4TB NVMe hard drives.
 
-    The server has Stata as well as numerous open source tools such as R, Python, Bash, etc.
+    The server has Knitro, Stata as well as numerous open source tools such as R, Python, Bash, etc.
 
 .. contents::
 
@@ -141,6 +141,22 @@ fsi-pesd
 ++++++++
 
 We have unlimited-user 4-core network license for Stata 16.1.  Use the ``stata-mp`` or ``xstata-mp`` commands.
+
+Knitro
+------
+
+* The Knitro directory is currently located on both servers at `/data/knitro-12.4.0-Linux-64`.  
+* Knitro may require that several environmental variables are setup before it runs correctly e.g. in `bash` shell::
+
+    export ARTELYS_LICENSE_NETWORK_ADDR=license4.stanford.edu
+    export KNITRODIR=/data/knitro-12.4.0-Linux-64
+    export KMP_DUPLICATE_LIB_OK=TRUE
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/data/knitro-12.4.0-Linux-64/lib
+
+  + Can place these in a `.bash_profile`...
+  + If using `RStudio Server` (versus base `R`) you may need to set these via `Sys.setenv()`...
+
+* We've installed the `R` and `python3` bindings.
 
 NAG Fortran
 -----------
