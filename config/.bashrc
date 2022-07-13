@@ -38,7 +38,7 @@ export R_HISTFILE=$XDG_CACHE_HOME/R/Rhistory
 [ -d $XDG_CACHE_HOME/R ] || mkdir $XDG_CACHE_HOME/R
 export TEXINPUTS=".:$XDG_CONFIG_HOME/latex:"
 alias tmux="tmux -f ${XDG_CONFIG_HOME}/tmux/tmux.conf"
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
 [ -d "$XDG_CACHE_HOME/vim" ] || mkdir -p $XDG_CACHE_HOME/vim
 
 # alias anki="QT_XCB_FORCE_SOFTWARE_OPENGL=1 anki --base=${HOME}/a/sync/Dropbox/Anki"

@@ -2,7 +2,7 @@
 
 UTILITIES_CONFIG_HOME=`pwd`
 
-if hash kde4-config
+if hash kde4-config 2>/dev/null
 then
     KDEHOME=`kde4-config --localprefix`
     mkdir --parents $KDEHOME/env
@@ -12,7 +12,7 @@ else
     true
 fi
 
-files=( .bashrc .XCompose )
+files=( .bashrc .vimrc .XCompose )
 for file in ${files[@]}
 do
     echo $file

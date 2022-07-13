@@ -49,11 +49,11 @@ if &t_Co > 2 && !has("gui_running")
   set background=dark
 endif
 
-
 " greater XDG compliance
-" should probably set defaults
-set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
-" set runtimepath=$XDG_CONFIG_HOME/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$XDG_CONFIG_HOME/vim/after
+if !has("nvim")
+    set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+endif
+
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Useful maps
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
