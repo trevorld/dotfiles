@@ -1,3 +1,3 @@
 #!/bin/bash
 
-grep -r $1 * | grep -v "swp matches" | grep -v "^Binary file" | cut -d: -f1| uniq | xargs gvim -p
+xunzhao $1 | cut -d: -f1| uniq | grep "${2:-}" | xargs gvim -p
