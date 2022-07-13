@@ -1,3 +1,0 @@
-#!/bin/bash
-
-rsync -avz --delete --progress --size-only trevor@fsi-pesd-server.stanford.edu:/home/trading_game/ /home/trevorld/a/backups/trading_game/
