@@ -1,8 +1,0 @@
-" 0.5.3 (created: 2007/12/21 19:26:07)
-map <Leader>n :toolbartoggle Navigation Toolbar<Enter>
-map <Leader>b :toolbartoggle Bookmarks Toolbar<Enter>
-map <Leader>m :toolbartoggle Menu Bar<Enter>
-map <Leader>a :toolbartoggle Add-on Bar<Enter>
-set visualbell
-set defsearch=duckduckgo
-" vim: set ft=vimperator:

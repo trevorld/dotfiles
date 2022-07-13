@@ -38,9 +38,6 @@ export R_HISTFILE=$XDG_CACHE_HOME/R/Rhistory
 [ -d $XDG_CACHE_HOME/R ] || mkdir $XDG_CACHE_HOME/R
 export TEXINPUTS=".:$XDG_CONFIG_HOME/latex:"
 alias tmux="tmux -f ${XDG_CONFIG_HOME}/tmux/tmux.conf"
-export TODOTXT_CFG_FILE=$XDG_CONFIG_HOME/todo/todo.cfg
-[ -d $XDG_CONFIG_HOME/todo ] || mkdir $XDG_CONFIG_HOME/todo
-source $XDG_CONFIG_HOME/todo/todo_completion
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 [ -d "$XDG_CACHE_HOME/vim" ] || mkdir -p $XDG_CACHE_HOME/vim
 
