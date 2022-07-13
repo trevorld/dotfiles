@@ -12,7 +12,7 @@ else
     true
 fi
 
-files=( .bashrc )
+files=( .bashrc .XCompose )
 for file in ${files[@]}
 do
     echo $file
