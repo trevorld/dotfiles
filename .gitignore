@@ -1,3 +1,4 @@
 *.swp
 config/.local/share/nvim/shada
+config/.local/share/nvim/.netrwhist
 config/.vim/.netrwhist

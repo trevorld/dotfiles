@@ -22,8 +22,6 @@ map Q gq
 com! Kwbd enew|bw #|bp
 com! Undiff set nodiff | set noscrollbind | set foldcolumn=0
 
-" Useful Autocommands
-
 " Configure plugins
 let R_assign = 0
 
@@ -35,3 +33,36 @@ let g:Tex_ViewRule_pdf = "okular"
 let g:riv_fold_auto_update = 0
 
 let g:rainbow_active = 1
+
+if filereadable(".lintr")
+  let g:ale_r_lintr_options = join(readfile('.lintr'))
+else
+  let g:ale_r_lintr_options = "with_defaults(infix_spaces_linter=NULL, line_length_linter(120))"
+endif
+
+" Useful Autocommands
+if has("autocmd")
+
+  " Enable file type detection,  Use the default filetype settings
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  augroup myAUTOCMDs
+    au!
+    autocmd BufRead,BufNewFile,BufEnter *.{R,r} set filetype=r
+    au BufWritePre *.{py,R,r} %s/\s\+$//e " Remove trailing whitespace
+  augroup END
+
+  augroup vimrcEx
+    au!
+    autocmd FileType text setlocal textwidth=79  " Set text file width to 79
+    set formatoptions=1
+    " When editing a file, always jump to the last known cursor position.
+    autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif
+    autocmd BufEnter * cd %:p:h " automatically change directories to the file's directory
+  augroup END
+
+endif 

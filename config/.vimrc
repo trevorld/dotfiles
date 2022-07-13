@@ -50,6 +50,12 @@ let g:riv_fold_auto_update = 0
 
 let g:rainbow_active = 1
 
+if filereadable(".lintr")
+  let g:ale_r_lintr_options = join(readfile('.lintr'))
+else
+  let g:ale_r_lintr_options = "with_defaults(infix_spaces_linter=NULL, line_length_linter(120))"
+endif
+
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Useful maps
@@ -108,19 +114,10 @@ if has("autocmd")
 
   augroup myAUTOCMDs
     au!
-    autocmd Bufenter *.prg set filetype=eviews
-    autocmd BufNewFile *.prg set filetype=eviews
-    autocmd BufEnter .Rprofile set filetype=r
     autocmd BufRead,BufNewFile,BufEnter *.{R,r} set filetype=r
-    "Let us use LSS (Latex Symbol Selector) with out .tex and .Rnw files
-    autocmd BufEnter *.tex imap <F8> <Esc>:silent !lss &<cr>a
-    autocmd BufEnter *.Rnw imap <F8> <Esc>:silent !lss &<cr>a
-    " Remove trailing whitespace
-    au BufWritePre *.{py,R,r} %s/\s\+$//e
-
+    au BufWritePre *.{py,R,r} %s/\s\+$//e " Remove trailing whitespace
   augroup END
 
-  " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
     au!
     autocmd FileType text setlocal textwidth=79  " Set text file width to 79
@@ -130,24 +127,14 @@ if has("autocmd")
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
       \   exe "normal g`\"" |
       \ endif
-      " automatically change directories to the file's directory
-    autocmd BufEnter * cd %:p:h
+    autocmd BufEnter * cd %:p:h " automatically change directories to the file's directory
   augroup END
 
 else
+
   set autoindent		" always set autoindenting on
 
-endif " has("autocmd")
-
-try
-  source ~/a/media/software/vim/bundle/vim-plug/plug.vim
-  call plug#begin('~/a/media/software/vim/bundle')
-  Plug 'tpope/vim-fugitive'
-  call plug#end()
-
-catch
-    " do nothing
-endtry
+endif
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " custom Latex-Suite style mappings and settings for my Rnoweb and Latex files
@@ -183,7 +170,6 @@ endif
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Custom functions
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 if has("python")
 
 function! Section_Header(section_char, type)
