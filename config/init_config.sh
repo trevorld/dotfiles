@@ -15,7 +15,7 @@ fi
 files=( .bashrc .vimrc .XCompose )
 for file in ${files[@]}
 do
-    echo $file
+    echo "Creating symbolic link for $HOME/$file"
     ln --symbolic --interactive $UTILITIES_CONFIG_HOME/$file $HOME/$file
 done
 
@@ -26,13 +26,16 @@ then
     echo "Created $XDG_CONFIG_HOME"
 fi
 
-# HT Kerrek SB
-# http://stackoverflow.com/questions/9795538/bash-script-to-loop-through-subdirectories-and-create-symlinks-to-all-files 
-UTILITIES_XDG_CONFIG_HOME=$UTILITIES_CONFIG_HOME/.config
-cd "$UTILITIES_XDG_CONFIG_HOME"
-find -type d -exec mkdir --parents -- "$XDG_CONFIG_HOME"/{} \;
-find -type f -exec ln --symbolic --interactive -- "$UTILITIES_XDG_CONFIG_HOME"/{} "$XDG_CONFIG_HOME"/{} \;
-cd ..
+for file in $(ls .config)
+do
+    echo "Creating symbolic link for .config/$file"
+    if ! [ -d $XDG_CONFIG_HOME/$file ]
+    then
+        ln --symbolic --interactive $UTILITIES_CONFIG_HOME/.config/$file $XDG_CONFIG_HOME/$file
+    else
+        echo "$XDG_CONFIG_HOME/$file is a directory"
+    fi
+done
 
 XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
 if ! [ -d $XDG_DATA_HOME ]
@@ -43,6 +46,11 @@ fi
 
 for file in $(ls .local/share)
 do
-    echo .local/share/$file
-    ln --symbolic --interactive $UTILITIES_CONFIG_HOME/.local/share/$file $XDG_DATA_HOME/$file
+    echo "Creating symbolic link for $XDG_DATA_HOME/$file"
+    if ! [ -d $XDG_DATA_HOME/$file ]
+    then
+        ln --symbolic --interactive $UTILITIES_CONFIG_HOME/.local/share/$file $XDG_DATA_HOME/$file
+    else
+        echo "$XDG_DATA_HOME/$file is a directory"
+    fi
 done
