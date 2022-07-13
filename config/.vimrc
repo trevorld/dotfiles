@@ -1,30 +1,13 @@
-" Last change:	2008 May 21
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
 
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Useful Settings
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set nocompatible " Use Vim settings instead of Vi, must be first
 " set autoread            " Refresh buffer if file modified externally
 set backspace=indent,eol,start " allows backspacing in insert mode
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  " set backupdir-=.
-  " set backupdir^=~/tmp,/tmp
-  " set backup		" keep a backup file
-  set nobackup
-endif
+set nobackup
 set diffopt+=iwhite     " ignore whitespace when diffing
 set expandtab           " insert spaces instead of tabs
 set history=50		" keep 50 lines of command line history
@@ -40,6 +23,7 @@ set spell
 set scs                 " don't ignore case if enter uppercase letters
 set smarttab            " insert spaces instead of tabs
 set vb                  " set visual beep
+
 if &t_Co > 2 || has("gui_running")
   syntax on             " syntax highlighting when terminal has colors
   set hlsearch          " switch highlighting on last used search partern
@@ -47,6 +31,7 @@ endif
 " assume if vim is called that background is dark
 if &t_Co > 2 && !has("gui_running")
   set background=dark
+  set hlsearch          " switch highlighting on last used search partern
 endif
 
 " greater XDG compliance
@@ -54,28 +39,28 @@ if !has("nvim")
     set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
 endif
 
+let R_assign = 0
+
+let g:Tex_SmartQuoteOpen = '"'
+let g:Tex_SmartQuoteClose = '"'
+let g:Tex_DefaultTargetFormat = "pdf"
+let g:Tex_ViewRule_pdf = "okular"
+
+let g:riv_fold_auto_update = 0
+
+let g:rainbow_active = 1
+
+
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Useful maps
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" map Y mvy$`v      " Default is illogical, should be to end of line 
-
-" copy into and paste from clipboard
-map <Leader>y "+y
-map <Leader>Y "+Y
-map <Leader>p "+p
-map <Leader>P "+P
-map <Leader>a :% y + " copy entire file
-
-map <Leader>c :silent ! latex % > /dev/null & <CR> " Compile while editing
-map <Leader>C :silent ! Rnw2pdf % > /dev/null & <CR> " Compile while editing
 
 " scroll down file with spacebar
 map <space> <c-f>
-
-" undo an automatic line break
-imap <c-a> <Esc>kJA
-map <Leader>en :setlocal spell spelllang=en_us   " Turn english spell check
-map <Leader>eo :setlocal spell spelllang=eo_XX   " Turn esperanto spell check
+" Turn english spell check
+map <Leader>en :setlocal spell spelllang=en_us
+" Turn esperanto spell check
+map <Leader>eo :setlocal spell spelllang=eo_XX
 
 map <Leader>k <C-W>k:bd<Enter>
 map <Leader>j <C-W>j:bd<Enter>
@@ -83,25 +68,9 @@ map <Leader>j <C-W>j:bd<Enter>
 " useful maps for Rnoweb files to switch between Latex-suite and vim-r-plugin
 map <Leader>r :set filetype=r<CR>:set syntax=rnoweb<CR>
 map <Leader>t :set filetype=tex<CR>:set syntax=rnoweb<CR>
-" let g:vimrplugin_underscore = 1
-let vimrplugin_assign = 0
-" let vimrplugin_assign = 0
-
-let g:vimrplugin_latexcmd = "texi2dvi -c -p" 
-let maplocalleader = ","
-" no smart quotes in latex
-let g:Tex_SmartQuoteOpen = '"'
-let g:Tex_SmartQuoteClose = '"'
-let g:Tex_DefaultTargetFormat = "pdf"
-let g:Tex_ViewRule_pdf = "okular"
-let g:riv_fold_auto_update = 0
 
 " useful to spread spaces
 map <Leader>s i<space><Esc>la<space><Esc>h
-
-" compile rst files
-map <Leader>rh :! rst2html % %<.html <Enter>
-map <Leader>rp :! rst2latex % %<.tex; texi2dvi -c -p %<.tex <Enter>
 
 " useful maps for writing Re-Structured Text
 if has("python")
@@ -124,8 +93,6 @@ endif
 " Useful commands
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 com! Kwbd enew|bw #|bp
-com! Kwbn enew|bw #|bn
-com! Kwbp enew|bw #|bp
 com! Undiff set nodiff | set noscrollbind | set foldcolumn=0
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,37 +140,14 @@ else
 endif " has("autocmd")
 
 try
-" " pathogen easy install vim modules
-"     source ~/src/vim/bundle/vim-pathogen/autoload/pathogen.vim
-"     execute pathogen#infect('~/src/vim/bundle/{}')
-" vim-plug
   source ~/a/media/software/vim/bundle/vim-plug/plug.vim
   call plug#begin('~/a/media/software/vim/bundle')
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'Rykka/InstantRst'
-  Plug 'Rykka/riv.vim'
-  Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
-  Plug 'vim-scripts/utl.vim'
-  Plug 'vim-scripts/Vim-R-plugin'
-  Plug 'vim-scripts/VOom'
-  Plug 'drmikehenry/vim-fontsize'
   Plug 'tpope/vim-fugitive'
-  Plug 'luochen1990/rainbow'
-  Plug 'scrooloose/syntastic'
-  Plug 'chrisbra/csv.vim'
-  Plug 'nathangrigg/vim-beancount'
-  Plug 'Vimjas/vim-python-pep8-indent'
   call plug#end()
-
-  let g:rainbow_active = 1
-  let g:syntastic_enable_r_lintr_checker = 0
-  let g:syntastic_r_checkers = ['lintr']
-  let g:syntastic_r_lintr_linters = "with_defaults(infix_spaces_linter=NULL, line_length_linter(120))"
 
 catch
     " do nothing
 endtry
-
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " custom Latex-Suite style mappings and settings for my Rnoweb and Latex files
@@ -241,30 +185,6 @@ endif
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 if has("python")
-
-function! LJ()
-python << EOF
-import vim
-html_string = '''
-<!-- <lj-cut text="Read More">  </lj-cut>                                        -->
-<!-- <img src="http://www.example.com/image.jpg" alt="title or description" />   -->
-<!-- <a href="http://www.example.com/">This is a link to an example website.</a> -->
-<!-- <lj user="exampleusername">                                                 -->
-<!-- <b>Bold</b> <i>Italic</i> <u>Underline</u> <tt>Monospace</tt>                -->
-<!-- <del>Striked text</del> <center>Centered text</center>                      -->
-<table cellspacing="25">
-<tr>
-<td>
-
-</td><td>
-
-</td>
-</table>
-'''
-vim.current.buffer[0:0] = html_string.splitlines()
-vim.command('set filetype=html')
-EOF
-endfunction
 
 function! Section_Header(section_char, type)
 python << EOF
@@ -379,15 +299,4 @@ for ii in range(nLines):
 
 endpython
 endfunction
-
 endif
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" This is an alternative that also works in block mode, but the deleted
-" text is lost and it only works for putting the current register.
-"vnoremap p "_dp

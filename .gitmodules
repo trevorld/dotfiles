@@ -8,5 +8,77 @@
 	path = config/.vim/pack/local/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
 [submodule "config/.local/share/nvim/site/pack/site/editorconfig-vim"]
-	path = config/.local/share/nvim/site/pack/site/editorconfig-vim
+	path = config/.local/share/nvim/site/pack/site/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "config/.vim/pack/local/start/riv.vim"]
+	path = config/.vim/pack/local/start/riv.vim
+	url = https://github.com/gu-fan/riv.vim
+[submodule "config/.local/share/nvim/site/pack/site/start/riv.vim"]
+	path = config/.local/share/nvim/site/pack/site/start/riv.vim
+	url = https://github.com/gu-fan/riv.vim
+[submodule "config/.local/share/nvim/site/pack/site/start/InstantRst"]
+	path = config/.local/share/nvim/site/pack/site/start/InstantRst
+	url = https://github.com/gu-fan/InstantRst
+[submodule "config/.vim/pack/local/start/InstantRst"]
+	path = config/.vim/pack/local/start/InstantRst
+	url = https://github.com/gu-fan/InstantRst
+[submodule "config/.vim/pack/local/start/vim-fontsize"]
+	path = config/.vim/pack/local/start/vim-fontsize
+	url = https://github.com/drmikehenry/vim-fontsize
+[submodule "config/.local/share/nvim/site/pack/site/start/vim-fontsize"]
+	path = config/.local/share/nvim/site/pack/site/start/vim-fontsize
+	url = https://github.com/drmikehenry/vim-fontsize
+[submodule "config/.vim/pack/local/start/vim-python-pep8-indent"]
+	path = config/.vim/pack/local/start/vim-python-pep8-indent
+	url = https://github.com/Vimjas/vim-python-pep8-indent
+[submodule "config/.local/share/nvim/site/pack/site/start/vim-python-pep8-indent"]
+	path = config/.local/share/nvim/site/pack/site/start/vim-python-pep8-indent
+	url = https://github.com/Vimjas/vim-python-pep8-indent
+[submodule "config/.local/share/nvim/site/pack/site/start/rainbow"]
+	path = config/.local/share/nvim/site/pack/site/start/rainbow
+	url = https://github.com/luochen1990/rainbow
+[submodule "config/.vim/pack/local/start/rainbow"]
+	path = config/.vim/pack/local/start/rainbow
+	url = https://github.com/luochen1990/rainbow
+[submodule "config/.vim/pack/local/start/utl.vim"]
+	path = config/.vim/pack/local/start/utl.vim
+	url = https://github.com/vim-scripts/utl.vim
+[submodule "config/.local/share/nvim/site/pack/site/start/utl.vim"]
+	path = config/.local/share/nvim/site/pack/site/start/utl.vim
+	url = https://github.com/vim-scripts/utl.vim
+[submodule "config/.local/share/nvim/site/pack/site/start/VOom"]
+	path = config/.local/share/nvim/site/pack/site/start/VOom
+	url = https://github.com/vim-scripts/VOom
+[submodule "config/.vim/pack/local/start/VOom"]
+	path = config/.vim/pack/local/start/VOom
+	url = https://github.com/vim-scripts/VOom
+[submodule "config/.vim/pack/local/start/vim-latex"]
+	path = config/.vim/pack/local/start/vim-latex
+	url = https://github.com/vim-latex/vim-latex
+[submodule "config/.local/share/nvim/site/pack/site/start/vim-latex"]
+	path = config/.local/share/nvim/site/pack/site/start/vim-latex
+	url = https://github.com/vim-latex/vim-latex
+[submodule "config/.vim/pack/local/start/Nvim-R"]
+	path = config/.vim/pack/local/start/Nvim-R
+	url = https://github.com/jalvesaq/Nvim-R
+[submodule "config/.local/share/nvim/site/pack/site/start/Nvim-R"]
+	path = config/.local/share/nvim/site/pack/site/start/Nvim-R
+	url = https://github.com/jalvesaq/Nvim-R
+[submodule "config/.vim/pack/local/start/csv.vim"]
+	path = config/.vim/pack/local/start/csv.vim
+	url = https://github.com/chrisbra/csv.vim
+[submodule "config/.local/share/nvim/site/pack/site/start/csv.vim"]
+	path = config/.local/share/nvim/site/pack/site/start/csv.vim
+	url = https://github.com/chrisbra/csv.vim
+[submodule "config/.local/share/nvim/site/pack/site/start/ale"]
+	path = config/.local/share/nvim/site/pack/site/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "config/.vim/pack/local/start/ale"]
+	path = config/.vim/pack/local/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "config/.vim/pack/local/start/vim-fugitive"]
+	path = config/.vim/pack/local/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "config/.local/share/nvim/site/pack/site/start/vim-fugitive"]
+	path = config/.local/share/nvim/site/pack/site/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
