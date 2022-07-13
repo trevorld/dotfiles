@@ -1,16 +1,18 @@
-# username <- Sys.getenv("LOGNAME")[[1]]
-.hostname <- Sys.getenv("HOSTNAME", Sys.getenv("HOST"))
-
-# .libPaths(new=basedir::save_data_path("R/%p-platform/%v", expand=TRUE))
-# options(devtools.path=file.path(basedir::config_home, "R-dev"))
-
-options(browser="firefox", help.try.all.packages=TRUE, 
+options(browser="firefox", 
+        editor='gvim -c "set ft=r"',
+        error=quote(utils::recover()),
+        help.try.all.packages=TRUE, 
+        help_type="text",
         Ncpus = parallel::detectCores(),
-        warn=1, width=80, error=quote(utils::recover()),
-        editor='gvim -c "set ft=r"', help_type="text")
+        warn=1, 
+        width=80)
 
 if(interactive()) {
-    library("devtools")
+    if (requireNamespace("devtools")) library("devtools")
+    if (capabilities("cairo")) {
+        options(bitmapType = "cairo")
+        grDevices::X11.options(type = "cairo")
+    }
 }
 
 if(capabilities("cledit")) {
@@ -35,5 +37,3 @@ reset_width <- function() {
         options(width=120)}
     )
 }
-
-exit <- function() { quit('no') }
