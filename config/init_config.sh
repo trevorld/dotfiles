@@ -12,7 +12,7 @@ else
     true
 fi
 
-files=( .bashrc .vimrc .XCompose )
+files=( .bashrc .vim .vimrc .XCompose )
 for file in ${files[@]}
 do
     echo "Creating symbolic link for $HOME/$file"

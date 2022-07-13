@@ -1,3 +1,12 @@
 [submodule "config/.local/share/nvim/site/pack/site/start/vim-beancount"]
 	path = config/.local/share/nvim/site/pack/site/start/vim-beancount
 	url = https://github.com/nathangrigg/vim-beancount
+[submodule "config/.vim/pack/local/start/vim-beancount"]
+	path = config/.vim/pack/local/start/vim-beancount
+	url = https://github.com/nathangrigg/vim-beancount
+[submodule "config/.vim/pack/local/start/editorconfig-vim"]
+	path = config/.vim/pack/local/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "config/.local/share/nvim/site/pack/site/editorconfig-vim"]
+	path = config/.local/share/nvim/site/pack/site/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
