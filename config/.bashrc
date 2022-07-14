@@ -60,6 +60,7 @@ alias pdfjoin="pdfjoin --paper letter"
 alias rsync="rsync -avh --exclude=vms --exclude=*.swp --exclude=projects/trading_game/register_1.0 --exclude=projects/trading_game/development/WWW/records/independent"
 # alias rsync="rsync -avh --exclude=sync/Dropbox --exclude=vms --exclude=*.swp --exclude=projects/trading_game/register_1.0 --exclude=projects/trading_game/development/WWW/records/independent"
 alias rsync2="command rsync -rvl --size-only --omit-dir-times --no-perms -e 'ssh -p 2222' --exclude=*.swp --exclude=*.git"
+alias rsync3="command rsync -rvl --size-only --omit-dir-times --no-perms --exclude=*.swp --exclude=*.git"
 
 PS1="\w\$ "
 

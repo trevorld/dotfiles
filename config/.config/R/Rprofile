@@ -1,5 +1,5 @@
 options(browser="firefox", 
-        editor='gvim -c "set ft=r"',
+        editor="vim",
         error=quote(utils::recover()),
         help.try.all.packages=TRUE, 
         help_type="text",

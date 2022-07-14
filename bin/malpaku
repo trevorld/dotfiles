@@ -18,6 +18,9 @@ do
         *.tar.bz|*.tar.bz2|*.tbz|*.tbz2 )
             tar -jxf $file
             ;;
+        *.tar.xz )
+            tar -xf $file
+            ;;
         *.tgz )
             tar -zxvf $file
             ;;
