@@ -7,7 +7,7 @@ then
     KDEHOME=`kde4-config --localprefix`
     mkdir --parents $KDEHOME/env
     file=source_bashrc.sh
-    ln --symbolic --interactive $UTILITIES_CONFIG_HOME/.kde/env/$file $KDEHOME/env/$file
+    ln -vfns $UTILITIES_CONFIG_HOME/.kde/env/$file $KDEHOME/env/$file
 else
     true
 fi
@@ -15,8 +15,11 @@ fi
 files=( .bashrc .vim .vimrc .XCompose )
 for file in ${files[@]}
 do
-    echo "Creating symbolic link for $HOME/$file"
-    ln --symbolic --interactive $UTILITIES_CONFIG_HOME/$file $HOME/$file
+    if ! [ -e $HOME/$file ]
+    then
+	echo "Creating symbolic link for $HOME/$file"
+    fi
+    ln -vfns $UTILITIES_CONFIG_HOME/$file $HOME/$file
 done
 
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
@@ -28,13 +31,11 @@ fi
 
 for file in $(ls .config)
 do
-    echo "Creating symbolic link for .config/$file"
-    if ! [ -d $XDG_CONFIG_HOME/$file ]
+    if ! [ -e $XDG_CONFIG_HOME/$file ]
     then
-        ln --symbolic --interactive $UTILITIES_CONFIG_HOME/.config/$file $XDG_CONFIG_HOME/$file
-    else
-        echo "$XDG_CONFIG_HOME/$file is a directory"
+        echo "Creating symbolic link for $XDG_CONFIG_HOME/$file"
     fi
+    ln -vfns $UTILITIES_CONFIG_HOME/.config/$file $XDG_CONFIG_HOME/$file
 done
 
 XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
@@ -46,11 +47,9 @@ fi
 
 for file in $(ls .local/share)
 do
-    echo "Creating symbolic link for $XDG_DATA_HOME/$file"
-    if ! [ -d $XDG_DATA_HOME/$file ]
+    if ! [ -e $XDG_DATA_HOME/$file ]
     then
-        ln --symbolic --interactive $UTILITIES_CONFIG_HOME/.local/share/$file $XDG_DATA_HOME/$file
-    else
-        echo "$XDG_DATA_HOME/$file is a directory"
+        echo "Creating symbolic link for $XDG_DATA_HOME/$file"
     fi
+    ln -vfns $UTILITIES_CONFIG_HOME/.local/share/$file $XDG_DATA_HOME/$file
 done
