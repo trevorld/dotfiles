@@ -12,14 +12,19 @@ else
     true
 fi
 
+function robust_ln {
+    # ln -fs doesn't remove directories...
+    if [ -d $2 ] && ! [ -L  $2 ]
+    then
+        rm -rf $2
+    fi
+    ln -vfns $1 $2
+}
+
 files=( .bashrc .vim .vimrc .XCompose )
 for file in ${files[@]}
 do
-    if ! [ -e $HOME/$file ]
-    then
-	echo "Creating symbolic link for $HOME/$file"
-    fi
-    ln -vfns $UTILITIES_CONFIG_HOME/$file $HOME/$file
+    robust_ln $UTILITIES_CONFIG_HOME/$file $HOME/$file
 done
 
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
@@ -31,11 +36,7 @@ fi
 
 for file in $(ls .config)
 do
-    if ! [ -e $XDG_CONFIG_HOME/$file ]
-    then
-        echo "Creating symbolic link for $XDG_CONFIG_HOME/$file"
-    fi
-    ln -vfns $UTILITIES_CONFIG_HOME/.config/$file $XDG_CONFIG_HOME/$file
+    robust_ln $UTILITIES_CONFIG_HOME/.config/$file $XDG_CONFIG_HOME/$file
 done
 
 XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
@@ -47,9 +48,5 @@ fi
 
 for file in $(ls .local/share)
 do
-    if ! [ -e $XDG_DATA_HOME/$file ]
-    then
-        echo "Creating symbolic link for $XDG_DATA_HOME/$file"
-    fi
-    ln -vfns $UTILITIES_CONFIG_HOME/.local/share/$file $XDG_DATA_HOME/$file
+    robust_ln $UTILITIES_CONFIG_HOME/.local/share/$file $XDG_DATA_HOME/$file
 done
