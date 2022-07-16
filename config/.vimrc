@@ -39,7 +39,9 @@ if !has("nvim")
     set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
 endif
 
-let R_assign = 0
+let g:instant_rst_browser = 'google-chrome' " firefox wasn't working
+
+let g:R_assign = 0
 
 let g:Tex_SmartQuoteOpen = '"'
 let g:Tex_SmartQuoteClose = '"'

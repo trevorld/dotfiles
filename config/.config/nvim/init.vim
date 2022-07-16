@@ -23,7 +23,9 @@ com! Kwbd enew|bw #|bp
 com! Undiff set nodiff | set noscrollbind | set foldcolumn=0
 
 " Configure plugins
-let R_assign = 0
+let g:instant_rst_browser = 'google-chrome'
+
+let g:R_assign = 0
 
 let g:Tex_SmartQuoteOpen = '"'
 let g:Tex_SmartQuoteClose = '"'
