@@ -15,7 +15,7 @@ if(interactive()) {
     }
 }
 
-if(capabilities("cledit")) {
+if(capabilities("cledit") && requireNamespace("rappdirs")) {
   cache_dir <- rappdirs::user_cache_dir("R")
   history_file <- file.path(cache_dir, "Rhistory")
   .First <- function() utils::loadhistory(history_file)
