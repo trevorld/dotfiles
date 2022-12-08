@@ -6,4 +6,5 @@
 
 # pandoc -o $1/README.md $1/README.rst
 R CMD build --resave-data $1
-R CMD check --as-cran $1_*.tar.gz
+file=`find -name "$1*tar.gz" | sort -n | tail -1`
+R CMD check --as-cran $file
