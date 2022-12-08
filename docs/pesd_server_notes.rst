@@ -281,3 +281,12 @@ Troubleshooting network connectivity issues
 -------------------------------------------
 
 * https://upcloud.com/community/tutorials/troubleshoot-network-connectivity-linux-server/
+
+Fixing "/user.slice/user-1000.slice/session-1.scope is not a snap cgroup"
+-------------------------------------------------------------------------
+
+* https://bugs.launchpad.net/ubuntu/+source/snapd/+bug/1951491
+
+In a terminal do::
+
+    export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR:-/run/user/1000}/bus"
