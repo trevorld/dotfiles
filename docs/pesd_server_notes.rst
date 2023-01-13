@@ -115,6 +115,13 @@ Killing Jobs
 
 There are two main commands for killing currently running jobs: ``kill`` and ``killall``.  If you want to kill all the instances of a certain executable you have launched you can use ``killall executable_name``, for example ``killall R`` or ``killall python``.  Doing so will not affect jobs launched by other users.  If you want to kill a specific job use ``kill PID``.  You can get the PID number of a job by either using ``top`` or ``ps aux``.  Oftentimes you'll want to pipe the output of ``ps aux`` to ``grep`` in order to filter the output to a smaller number of jobs such as ``ps aux | grep $USERNAME`` to find all jobs that ``$USERNAME`` has running or ``ps aux | grep matlab`` in order to see all matlab jobs that are currently running.
 
+Limiting memory usage
+---------------------
+
+One can limit the maximum memory used by the program with `systemd-run`.  For example to limit an R session to "only" using 32GB of RAM::
+
+    systemd-run --user --scope -p MemoryLimit=32G R
+
 Computational Software Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
