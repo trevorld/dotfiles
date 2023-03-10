@@ -1,6 +1,18 @@
-export PATH=$PATH:$HOME/bin:$HOME/a/dotfiles/bin:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/.cargo/bin
+export GUROBI_HOME="/opt/gurobi1001/linux64"
+
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/a/dotfiles/bin
+export PATH=$PATH:$HOME/.cabal/bin
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$GUROBI_HOME/bin
+
 export PYTHONPATH=$PYTHONPATH:unit_tests
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GUROBI_HOME/lib
+
+# Machine specific configuration
 if [[ "$HOSTNAME" =~ "zareason-zu8330" ]]
 then
     export DEV=/home/trading_game/development/cgi-bin
@@ -19,7 +31,6 @@ fi
 
 export HISTSIZE=10000
 export SHELL=/bin/bash
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/lib
 export EDITOR="/usr/bin/gvim"
 export GIT_EDITOR="/usr/bin/gvim -f"
 export COLUMNS

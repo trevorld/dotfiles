@@ -149,21 +149,38 @@ fsi-pesd
 
 We have unlimited-user 4-core network license for Stata 16.1.  Use the ``stata-mp`` or ``xstata-mp`` commands.
 
+Gurobi
+------
+
+* The Gurobi directory is currently located on both servers at ``/opt/gurobi1001/linux64/``
+* Gurobi may require that several environmental variables are setup before it runs correctly e.g. in ``bash`` shell::
+
+    export GUROBI_HOME="/opt/gurobi1001/linux64"
+    export PATH=$PATH:$GUROBI_HOME/bin
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GUROBI_HOME/lib
+
+  + Can place these in a ``.bash_profile`` or ``.bashrc`` file...
+  + If using ``RStudio Server`` (versus base ``R``) you may need to set these via ``Sys.setenv()``...
+
+  We don't have a multi-user license but you can request a free personal academic license from gurobi.com.
+
+* We've installed the ``R`` bindings.
+
 Knitro
 ------
 
-* The Knitro directory is currently located on both servers at `/data/knitro-12.4.0-Linux-64`.  
-* Knitro may require that several environmental variables are setup before it runs correctly e.g. in `bash` shell::
+* The Knitro directory is currently located on both servers at ``/data/knitro-12.4.0-Linux-64``.
+* Knitro may require that several environmental variables are setup before it runs correctly e.g. in ``bash`` shell::
 
     export ARTELYS_LICENSE_NETWORK_ADDR=license4.stanford.edu
     export KNITRODIR=/data/knitro-12.4.0-Linux-64
     export KMP_DUPLICATE_LIB_OK=TRUE
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/data/knitro-12.4.0-Linux-64/lib
 
-  + Can place these in a `.bash_profile`...
-  + If using `RStudio Server` (versus base `R`) you may need to set these via `Sys.setenv()`...
+  + Can place these in a ``.bash_profile`` or ``.bashrc`` file...
+  + If using ``RStudio Server`` (versus base ``R``) you may need to set these via ``Sys.setenv()``...
 
-* We've installed the `R` and `python3` bindings.
+* We've installed the ``R`` and ``python3`` bindings.
 
 NAG Fortran
 -----------
