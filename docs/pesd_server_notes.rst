@@ -5,14 +5,14 @@ PESD Linux Server notes
 PESD has two Ubuntu Linux servers:
 
 fsi-pesd-server.stanford.edu
-    This older server (Ubuntu 20.04 LTS) has 128GB of memory, 4 CPU processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and a 1 TB SSD hard drive for the home directories).
+    This older server (Ubuntu 22.04 LTS) has 128GB of memory, 4 CPU processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and a 1 TB SSD hard drive for the home directories).
 
-    The server has Knitro, Stata, NAG Fortran libraries, and Matlab as well as numerous open source tools such as R, Python, BASH, etc.
+    The server has Gurobi_, Knitro_, Matlab_, `NAG Fortran`_ libraries, and Stata_ as well as numerous open source tools such as R_, Python, BASH, etc.
 
 fsi-pesd.stanford.edu
-    This newer server (Ubuntu 20.04 LTS) has 256GB of memory, 1 CPU processor with 32 cores, and 2TB+4TB NVMe hard drives.
+    This newer server (Ubuntu 22.04 LTS) has 256GB of memory, 1 CPU processor with 32 cores, and 2TB+4TB NVMe hard drives.
 
-    The server has Knitro, Stata as well as numerous open source tools such as R, Python, Bash, etc.
+    The server has Gurobi_, Knitro_, and Stata_ as well as numerous open source tools such as R_, Python, Bash, etc.
 
 .. contents::
 
@@ -125,7 +125,7 @@ One can limit the maximum memory used by the program with `systemd-run`.  For ex
 Computational Software Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-STATA
+Stata
 -----
 
 fsi-pesd-server
@@ -208,7 +208,7 @@ The example single-threaded command tells you that it runs the following command
         cp /opt/NAG/fll6i26dfl/examples/data/e04ucfe.d .
         ./e04ucfe.exe < e04ucfe.d > e04ucfe.r
 
-MATLAB
+Matlab
 ------
 
 .. Sometimes Matlab won't work because the Matlab license server isn't running.  To restart the Matlab license server uset the following command in the shell::
@@ -224,39 +224,13 @@ If you want to use the non-GUI version of Matlab use (i.e. for use in nohup or t
 R
 --
 
-We have R installed, you can either use the command-line version with the ``R`` or ``Rscript`` commands.
+We have R installed, you can either use the command-line version with the ``R`` or ``Rscript`` commands or R Studio Server's web-based GUI:
 
-fsi-pesd-server
-+++++++++++++++
-
-fsi-pesd-server also has R Studio Server's web-based GUI: http://fsi-pesd-server.stanford.edu:8787
+* http://fsi-pesd.stanford.edu:8787
+* http://fsi-pesd-server.stanford.edu:8787
 
 If using RStudio Server and see an "RStudio Initialization Error: Error occurred during transmission" try deleting the ``.rstudio`` directory in your home directory.
 
-.. Knitro
-.. ------
-.. 
-.. Frank has installed a trial version of Knitro on the server which he'll likely upgrade to a full version.  It has Matlab, Python, R, C/C++, C#, Fortran, Java, and AMPL interfaces.  For all version you'll need to set an environmental variable to the license file (the license filename will change upon upgrade to full version)::
-.. 
-..     export ARTELYS_LICENSE=/home/frank/knitro-10.1.0-z-Linux-64/ziena_lic_trial_artelysknitro_academicfull_2016-07-07_908b43880e.txt
-.. 
-.. Here is how to run one of the Matlab examples (like ``exampleMINLP1.m``)::
-.. 
-..     cd /home/frank/knitro-10.1.0-z-Linux-64/knitromatlab
-..     matlab # or matlab -nodesktop -nosplash BUT NOT matlab < exampleP1.m
-..     exampleMINLP1
-.. 
-.. To run a Python example (like ``exampleMINLP.py``)  you'll need to export (or modify) another environmental variable::
-.. 
-..     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/frank/knitro-10.1.0-z-Linux-64/lib
-..     cd /home/frank/knitro-10.1.0-z-Linux-64/examples/Python
-..     python exampleMINLP.py
-.. 
-.. I've installed the ``KnitroR`` package necessary to to run the R examples (like ``minlp_case.r``)::
-.. 
-..     cd /home/frank/knitro-10.1.0-z-Linux-64/examples/R
-..     Rscript minlp_case.r
-    
 Admin Notes
 ~~~~~~~~~~~
 
