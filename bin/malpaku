@@ -21,6 +21,9 @@ do
         *.tar.xz )
             tar -xf $file
             ;;
+        *.tar.zst )
+            tar -I zstd -xvf $file
+            ;;
         *.tgz )
             tar -zxvf $file
             ;;
