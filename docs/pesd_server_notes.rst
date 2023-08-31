@@ -288,3 +288,12 @@ Fixing "/user.slice/user-1000.slice/session-1.scope is not a snap cgroup"
 In a terminal do::
 
     export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR:-/run/user/1000}/bus"
+
+Fixing "X11 connection rejected because of wrong authentication" when using firefox
+-----------------------------------------------------------------------------------
+
+* https://stackoverflow.com/a/56661420/2121942
+
+In a terminal do::
+
+    export XAUTHORITY=$HOME/.Xauthority
