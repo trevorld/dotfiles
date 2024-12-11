@@ -2,12 +2,7 @@
 PESD Linux Server notes
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-PESD has two Ubuntu Linux servers:
-
-fsi-pesd-server.stanford.edu
-    This older server (Ubuntu 22.04 LTS) has 128GB of memory, 4 CPU processors (for a total of 32 cores), and a 4TB hard drive (as well as an additional 240 GB SSD hard drive for the OS and a 1 TB SSD hard drive for the home directories).
-
-    The server has Gurobi_, Knitro_, Matlab_, `NAG Fortran`_ libraries, and Stata_ as well as numerous open source tools such as R_, Python, BASH, etc.
+PESD has one Ubuntu Linux servers:
 
 fsi-pesd.stanford.edu
     This newer server (Ubuntu 22.04 LTS) has 256GB of memory, 1 CPU processor with 32 cores, and 2TB+4TB NVMe hard drives.
@@ -24,7 +19,7 @@ Logging in
 
 One can log onto the server using SSH using your provided username and password.  Mac and Linux computers have SSH built in.  If you are on one of those systems or you have installed a Unix environment with SSH on Windows (such as the one provided by Cygwin_) then open up a terminal and login in::
 
-  bash$ ssh -X username@fsi-pesd-server.stanford.edu
+  bash$ ssh -X username@fsi-pesd.stanford.edu
 
 And then enter your password at the prompt.  If you are not connected to PESD's ethernet network then you'll first need to VPN_ onto Stanford's network.
 
@@ -66,13 +61,13 @@ Data transfer
 
 `Secure File Transfers`_ to the FSI-PESD-Server can be accomplished in a number of ways including using SCP or SFTP.  On \*nix environments this can be as simple as::
 
-   bash$ scp -r local_project_directory  username@fsi-pesd-server.stanford.edu:/data/server_project_directory
+   bash$ scp -r local_project_directory  username@fsi-pesd.stanford.edu:/data/server_project_directory
 
 .. _Secure File Transfers: http://web.stanford.edu/group/security/securecomputing/sftp.html
 
 Another useful tool for transferring data or keeping data in sync is `rsync`.  For example to make (and/or synchronize an existing) copy of the trading game to my laptop I can use the command::
 
-  bash$ rsync -avz --delete --verbose --progress --recursive --size-only trevor@fsi-pesd-server.stanford.edu:/home/trading_game/ /home/trevorld/media/SpiderOak/trading_game/
+  bash$ rsync -avz --delete --verbose --progress --recursive --size-only trevor@fsi-pesd.stanford.edu:/home/trading_game/ /home/trevorld/media/SpiderOak/trading_game/
 
 One helpful option to `rsynce` is the `--dry-run` flag which tells you what it would have done without actually doing it.
 
@@ -106,9 +101,7 @@ For example::
 
 	nohup ./e04ucfe.exe < e04ucfe.d > e04ucfe.r &
 
-Note if you will be running a long job using ``nohup``, ``screen``, or ``tmux`` you should probably need to use the non-graphical command-line versions of ``matlab``, ``sas``, ``stata``, etc.  For example use ``state-se`` instead of ``xstata-se`` or you can launch ``matlab`` with the ``-nodesktop`` and ``-nosplash`` options (see `Matlab no gui`_ for more details).
-
-.. _Matlab no gui: http://aspratyush.wordpress.com/tag/matlab-no-gui/
+Note if you will be running a long job using ``nohup``, ``screen``, or ``tmux`` you should probably need to use the non-graphical command-line versions of ``stata``, etc.  For example use ``state-se`` instead of ``xstata-se``.
 
 Killing Jobs
 ------------
@@ -128,10 +121,10 @@ Computational Software Notes
 Stata
 -----
 
-fsi-pesd-server
-+++++++++++++++
+fsi-pesd
+++++++++
 
-We have a 2-user network license for Stata 13.1.  This means up to two different users can have open multiple sessions of Stata.
+We have unlimited-user 4-core network license for Stata 16.1.  Use the ``stata-mp`` or ``xstata-mp`` commands.
 
 NB. the ``stata``, ``xstata``, ``stata-sm``, ``xstata-sm`` commands will launch data limited versions of stata.  Instead use the ``stata-se``, ``xstata-se``, ``stata-mp``, or ``xstata-mp`` commands (since we didn't buy MP version of stata the latter two should be equivalent to the SE version) which do not have data size restriction imposed on them.  If you are using a ``.bashrc`` configuration file for your bash shell you may want it to include an alias like::
 
@@ -143,11 +136,6 @@ NB. Stata writes alot of temporary files to the location of ``$TMPDIR`` which by
    env TMPDIR=/data/tmp stata-se < filename.do > filename.log &
 
 This variable can also be permanently set in a configuration file like ``.bashrc`` (in the example above the ``xstata`` alias always sets ``$TMPDIR`` to ``/data/tmp``).
-
-fsi-pesd
-++++++++
-
-We have unlimited-user 4-core network license for Stata 16.1.  Use the ``stata-mp`` or ``xstata-mp`` commands.
 
 Gurobi
 ------
@@ -169,7 +157,7 @@ Gurobi
 Knitro
 ------
 
-* The Knitro directory is currently located on both servers at ``/data/knitro-12.4.0-Linux-64``.
+* The Knitro directory is currently located on the servers at ``/data/knitro-12.4.0-Linux-64``.
 * Knitro may require that several environmental variables are setup before it runs correctly e.g. in ``bash`` shell::
 
     export ARTELYS_LICENSE_NETWORK_ADDR=license4.stanford.edu
@@ -208,26 +196,12 @@ The example single-threaded command tells you that it runs the following command
         cp /opt/NAG/fll6i26dfl/examples/data/e04ucfe.d .
         ./e04ucfe.exe < e04ucfe.d > e04ucfe.r
 
-Matlab
-------
-
-.. Sometimes Matlab won't work because the Matlab license server isn't running.  To restart the Matlab license server uset the following command in the shell::
-
-    /usr/local/MATLAB/R2014b/etc/lmstart
-
-.. It might give you a message saying "Error.  Cannot remove /var/tmp/lm_TMW.dat".  You should manually delete that file (i.e. "rm /var/tmp/lm_TMW.dat" and retry the previous command.
-
-If you want to use the non-GUI version of Matlab use (i.e. for use in nohup or tmux/screen)::
-
-   matlab -nodesktop -nosplash
-
 R
 --
 
 We have R installed, you can either use the command-line version with the ``R`` or ``Rscript`` commands or R Studio Server's web-based GUI:
 
 * http://fsi-pesd.stanford.edu:8787
-* http://fsi-pesd-server.stanford.edu:8787
 
 If using RStudio Server and see an "RStudio Initialization Error: Error occurred during transmission" try deleting the ``.rstudio`` directory in your home directory.
 
