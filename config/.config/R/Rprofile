@@ -1,14 +1,18 @@
-options(browser="firefox", 
-        editor="vim",
-        error=quote(utils::recover()),
-        help.try.all.packages=TRUE, 
-        help_type="text",
+options(browser = "firefox",
+        editor = "nvim",
+        error = quote(utils::recover()),
+        help.try.all.packages = TRUE,
+        help_type = "text",
         Ncpus = parallel::detectCores(),
-        warn=1, 
-        width=80)
+        setWidthOnResize = TRUE,
+        showWarnCalls = TRUE,
+        warn = 1,
+        width = as.integer(Sys.getenv("COLUMNS", "120")))
 
 if(interactive()) {
     if (requireNamespace("devtools")) library("devtools")
+    if (requireNamespace("ghcli")) library("ghcli")
+    if (requireNamespace("tldtools")) library("tldtools")
     if (capabilities("cairo")) {
         options(bitmapType = "cairo")
         grDevices::X11.options(type = "cairo")
@@ -23,17 +27,4 @@ if(capabilities("cledit") && requireNamespace("rappdirs")) {
     if (!file.exists(cache_dir)) dir.create(cache_dir, recursive = TRUE)
     try(savehistory(history_file))
   }
-}
-
-# Inspired by Branimir Dolicki posting on StackOverflow
-# http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile
-reset_width <- function() {
-    tryCatch(
-      {options(width = as.integer(Sys.getenv("COLUMNS")))},
-      error = function(err) {
-        write("Can't get your terminal width. Put ``export COLUMNS'' in your \
-               .bashrc. Or something. Setting width to 120 chars",
-               stderr());
-        options(width=120)}
-    )
 }
