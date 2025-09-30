@@ -3,9 +3,9 @@ export GUROBI_HOME="/opt/gurobi1001/linux64"
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/a/dotfiles/bin
 export PATH=$PATH:$HOME/.cabal/bin
-export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$GUROBI_HOME/bin
+export PATH=$PATH:/opt/nvim-linux64/bin
 
 export PYTHONPATH=$PYTHONPATH:unit_tests
 
@@ -31,8 +31,8 @@ fi
 
 export HISTSIZE=10000
 export SHELL=/bin/bash
-export EDITOR="/usr/bin/gvim"
-export GIT_EDITOR="/usr/bin/gvim -f"
+export EDITOR="/usr/bin/nvim"
+export GIT_EDITOR="/usr/bin/nvim"
 export COLUMNS
 
 ## Improve XDG standard compliance
@@ -61,8 +61,10 @@ else
 fi
 # alias anki_beta="QT_XCB_FORCE_SOFTWARE_OPENGL=1 ~/tmp/anki_beta/bin/anki --base=${HOME}/tmp/Anki"
 alias ssh="ssh -X"
-alias gvim="gvim -p"
-alias vim="vim -p"
+# alias gvim="gvim -p"
+alias gvim="gnome-terminal -- nvim -p"
+alias vim="nvim -p"
+# alias vim="vim -p"
 alias R="R --no-restore-data --no-save --quiet"
 alias xstata="xstata-se"
 alias rst2pdf="rst2pdf -s letter -l en_US.UTF-8 -s freetype-sans"
