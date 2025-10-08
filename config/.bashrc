@@ -31,8 +31,8 @@ fi
 
 export HISTSIZE=10000
 export SHELL=/bin/bash
-export EDITOR="/usr/bin/nvim"
-export GIT_EDITOR="/usr/bin/nvim"
+export EDITOR="nvim"
+export GIT_EDITOR="nvim"
 export COLUMNS
 
 ## Improve XDG standard compliance
@@ -61,8 +61,11 @@ else
 fi
 # alias anki_beta="QT_XCB_FORCE_SOFTWARE_OPENGL=1 ~/tmp/anki_beta/bin/anki --base=${HOME}/tmp/Anki"
 alias ssh="ssh -X"
-# alias gvim="gvim -p"
-alias gvim="gnome-terminal -- nvim -p"
+if hash gnome-terminal 2>/dev/null; then
+    alias gvim="gnome-terminal -- nvim -p"
+else
+    alias gvim="xfce4-terminal --execute nvim -p"
+fi
 alias vim="nvim -p"
 # alias vim="vim -p"
 alias R="R --no-restore-data --no-save --quiet"

@@ -2,14 +2,15 @@
 -- Note neovim sets a lot of stuff by default: https://neovim.io/doc/user/vim_diff.html#nvim-defaults
 vim.opt.backup = false             -- do not keep a backup file
 vim.opt.diffopt:append{"iwhite"}   -- ignore whitespace when diffing
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 vim.opt.ignorecase = true
 vim.opt.maxmempattern = 2000000    -- solves error message
 vim.opt.number = true              -- show line numbers
 vim.opt.shell = "/bin/bash"
-vim.opt.shiftwidth = 4             -- tabs will insert 4 spaces
+vim.opt.shiftwidth = 4
 vim.opt.spell = true
 vim.opt.scs = true                 -- don't ignore case if enter uppercase letters
+vim.opt.tabstop = 4
 vim.opt.vb = true                  -- set visual beep
 
 -- from: https://github.com/neovim/nvim-lspconfig#suggested-configuration
