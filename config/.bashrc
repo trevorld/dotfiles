@@ -21,6 +21,10 @@ if [[ "$HOSTNAME" =~ "fsi-pesd" ]]
 then
     export DEV=/home/trading_game/development/cgi-bin
 fi
+if [[ "$HOSTNAME" =~ "pesd-tld-laptop" ]]
+then
+    export DEV=/home/trevorld/a/projects/trading_game/development/cgi-bin
+fi
 if [[ "$HOSTNAME" =~ "stoic-sloth" ]]
 then
     export XMODIFIERS="@im=fcitx"
