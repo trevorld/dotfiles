@@ -1,30 +1,33 @@
-options(browser = "firefox",
-        editor = "nvim",
-        error = quote(utils::recover()),
-        help.try.all.packages = TRUE,
-        help_type = "text",
-        Ncpus = parallel::detectCores(),
-        setWidthOnResize = TRUE,
-        showWarnCalls = TRUE,
-        warn = 1,
-        width = as.integer(Sys.getenv("COLUMNS", "120")))
+options(
+	browser = "firefox",
+	editor = "nvim",
+	error = quote(utils::recover()),
+	help.try.all.packages = TRUE,
+	help_type = "text",
+	Ncpus = parallel::detectCores(),
+	papersize = "letter",
+	setWidthOnResize = TRUE,
+	showWarnCalls = TRUE,
+	warn = 1,
+	width = as.integer(Sys.getenv("COLUMNS", "120"))
+)
 
 if(interactive()) {
-    if (requireNamespace("devtools")) library("devtools")
-    if (requireNamespace("ghcli")) library("ghcli")
-    if (requireNamespace("tldtools")) library("tldtools")
-    if (capabilities("cairo")) {
-        options(bitmapType = "cairo")
-        grDevices::X11.options(type = "cairo")
-    }
+	if (requireNamespace("devtools")) library("devtools")
+	if (requireNamespace("ghcli")) library("ghcli")
+	if (requireNamespace("tldtools")) library("tldtools")
+	if (capabilities("cairo")) {
+		options(bitmapType = "cairo")
+		grDevices::X11.options(type = "cairo")
+	}
 }
 
 if(capabilities("cledit") && requireNamespace("rappdirs")) {
-  cache_dir <- rappdirs::user_cache_dir("R")
-  history_file <- file.path(cache_dir, "Rhistory")
-  .First <- function() utils::loadhistory(history_file)
-  .Last <- function() { 
-    if (!file.exists(cache_dir)) dir.create(cache_dir, recursive = TRUE)
-    try(savehistory(history_file))
-  }
+	cache_dir <- rappdirs::user_cache_dir("R")
+	history_file <- file.path(cache_dir, "Rhistory")
+	.First <- function() utils::loadhistory(history_file)
+	.Last <- function() {
+		if (!file.exists(cache_dir)) dir.create(cache_dir, recursive = TRUE)
+		try(savehistory(history_file))
+	}
 }
