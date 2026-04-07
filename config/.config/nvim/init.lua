@@ -88,7 +88,7 @@ require("lazy").setup({
 
 require("lint").linters_by_ft = {
 	beancount = {"bean_check", },
-	python = {"ruff_check", }
+	python = {"ruff", }
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
