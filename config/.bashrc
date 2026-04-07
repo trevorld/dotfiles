@@ -82,6 +82,8 @@ alias rsync="rsync -avh --exclude=vms --exclude=*.swp --exclude=projects/trading
 alias rsync2="command rsync -rvl --size-only --omit-dir-times --no-perms -e 'ssh -p 2222' --exclude=*.swp --exclude=*.git"
 alias rsync3="command rsync -rvl --size-only --omit-dir-times --no-perms --exclude=*.swp --exclude=*.git"
 
+alias mpv_playlist="mpv --playlist=/home/trevorld/Videos/videos.m3u --save-position-on-quit &"
+
 PS1="\w\$ "
 
 ## Stuff in default .bashrc file
@@ -96,6 +98,7 @@ export HISTCONTROL=ignoreboth
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+shopt -s direxpand
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
