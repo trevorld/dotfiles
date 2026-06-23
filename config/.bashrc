@@ -1,3 +1,5 @@
+export CLAUDE_CODE_MAX_OUTPUT_TOKENS=150000
+
 export GUROBI_HOME="/opt/gurobi1001/linux64"
 
 export PATH=$PATH:$HOME/bin
